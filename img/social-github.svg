@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>social-github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="social-github" sketch:type="MSLayerGroup" stroke="#FFFFFF">
+            <g id="Page-1" sketch:type="MSShapeGroup">
+                <g id="social-github">
+                    <path d="M23.5,12.0044 C23.5,18.3554 18.352,23.5044 12,23.5044 C5.648,23.5044 0.5,18.3554 0.5,12.0044 C0.5,5.6524 5.648,0.5044 12,0.5044 C18.352,0.5044 23.5,5.6524 23.5,12.0044 L23.5,12.0044 L23.5,12.0044 Z" id="Stroke-882" fill="#2684FF"></path>
+                    <path d="M17.7229,6.0487 C16.4439,6.0487 14.4899,8.1597 14.4899,8.1597 C14.4899,8.1597 11.1289,7.6977 9.5349,8.1587 C9.5239,8.1467 7.5779,6.0487 6.3049,6.0487 C4.2769,7.7117 5.8379,10.5287 5.9119,10.6597 C5.2619,11.6347 4.9069,12.8517 5.0209,14.3267 C5.1749,16.3237 6.8399,18.5047 8.8419,18.5047 L15.1569,18.5047 C17.1599,18.5047 18.8249,16.3237 18.9789,14.3267 C19.0929,12.8517 18.7369,11.6317 18.0859,10.6567 C18.0859,10.6567 19.7979,7.7507 17.7229,6.0487 Z" id="Stroke-883"></path>
+                    <path d="M16.79,14.2695 C16.79,10.4565 14.155,12.0135 12,12.0135 C9.844,12.0135 7.209,10.4955 7.209,14.2695 C7.209,15.5025 8.21,16.5045 9.445,16.5045 L14.555,16.5045 C15.789,16.5045 16.79,15.5025 16.79,14.2695 L16.79,14.2695 L16.79,14.2695 Z" id="Stroke-884"></path>
+                    <path d="M14.5,13.0044 L14.5,15.0044" id="Stroke-885"></path>
+                    <path d="M9.5,13.0044 L9.5,15.0044" id="Stroke-886"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
