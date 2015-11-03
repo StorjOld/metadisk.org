@@ -71,6 +71,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	font-size: 40px;
 }
+h1.title {
+	margin-bottom: 1em;
+}
 b {
 	font-family:'Avenir Next LT Pro Demi';
 }
@@ -113,26 +116,23 @@ canvas {
 	background-position: 50% 50%;
 }
 
+.navbar-brand {
+	padding: 0;
+}
 .logo {
     display: inline-block;
     margin: 12px 30px;
     width: 150px;
 }
+
 .menu {
 	padding: 60px 0 40px;
     z-index: 3;
-    /*position: static;*/
     background: none;
     border: none;
     margin: 0;
 }
-.navbar-brand {
-	padding: 0;
-}
-.nav>li>a:hover, .nav>li>a:focus {
-    text-decoration: underline;
-    background: none; 
-}
+
 .navbar-default .navbar-toggle {
     border: 2px solid #fff;
 }
@@ -143,7 +143,6 @@ canvas {
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border: 0;
 }
-
 .navbar-default .navbar-toggle:focus {
 	background: none;
 }
@@ -157,6 +156,10 @@ canvas {
 .navbar-collapse.in li {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
+
+.navbar-nav {
+    margin: 0 -15px;
+}
 .navbar-nav>li>a {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -164,8 +167,9 @@ canvas {
     text-align: center;
     font-family:'Avenir Next LT Pro Demi';
 }
-.navbar-nav {
-    margin: 0 -15px;
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: underline;
+    background: none; 
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -179,18 +183,39 @@ canvas {
 }
 
 .navbar-page {
-	background: #2683ff;
+	background: #144EBC;
 	border: 0;
 	border-radius: 0;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#144ebc+0,185ee0+100 */
+	background: #144ebc; /* Old browsers */
+	background: -moz-linear-gradient(45deg,  #144ebc 0%, #185ee0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#144ebc), color-stop(100%,#185ee0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* IE10+ */
+	background: linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#144ebc', endColorstr='#185ee0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 .navbar-page .navbar-nav>li>a {
 	padding: 30px 16px;
+	color: #AFD1FF;
+}
+.navbar-page .navbar-nav>li>a:hover {
+	color: #fff;
+}
+.navbar-page .navbar-nav>li>a.active {
+	color: #fff;
+	background: #2683ff
 }
 .navbar-page .navbar-brand {
-	margin: 15px;
+	margin: 15px 30px 15px 15px;
 }
 .navbar-page .logo {
 	margin-left: 15px;
+}
+.navbar-page .navbar-toggle {
+	margin-top: 22px;
+    margin-right: 22px;
 }
 
 .header {
@@ -236,6 +261,7 @@ canvas {
 	font-size: 16px;
 	border-radius: 25px;
 	padding: 12px 55px 10px;
+	border: 0;
 	background: #2683FF;
 	color: #FFF;
 	z-index: 2;
@@ -269,6 +295,11 @@ canvas {
 .btn-green:hover, .btn-green:focus {
 	background: #91D127;
 	outline: 0;
+}
+
+.btn-menu {
+	margin-top:18px;
+	padding: 12px 32px 10px;
 }
 
 .email {
@@ -810,7 +841,13 @@ input:focus{
     outline: 0;
     border-color: #2D86fb;
 }
-
+.page input {
+	margin: 10px 0;
+    border-radius: 3px;
+    border-width: 1px;
+    max-width: 100%;
+    background: #f9f9f9;
+}
 .contact .email {
 	padding: 12px 25px;
 	max-width: 300px;
@@ -914,6 +951,92 @@ footer .connect a {
 .copyright:hover {
 	text-decoration: none;
 }
+
+
+/* -------------------------------- 
+
+Buckets
+
+-------------------------------- */
+
+body.page {
+	background: #f5f7f9;
+	padding-bottom: 3em;
+}
+.table {
+	margin-bottom: 0;
+}
+.content {
+	border: 2px solid #eee;
+    background: #fff;
+    border-radius: 5px;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+label {
+	margin-bottom: 0.8em;
+}
+.table-responsive.content {
+	padding: 0;
+}
+th, td {
+	padding: 1.8em !important;
+}
+.table>thead>tr>th {
+    border-bottom: 2px solid #eee;
+}
+.bucket-plan a {
+	font-family: 'Avenir Next LT Pro Demi';
+}
+.clickable-row {
+	cursor: pointer;
+}
+.btn-create-bucket {
+	margin-bottom: 2em;
+}
+
+.page .plans {
+	margin: 1em -15px 0;
+}
+.page .plan {
+	margin: 0.5em 0;
+	cursor: pointer;
+}
+.page .plan:hover {
+	border-color: #2683ff;
+}
+.page .plan:hover .plan-pricing{
+	color: #2683ff;
+}
+.page .plan:hover h4{
+	color: #2683ff;
+}
+.page .plan-pricing {
+	color: #333;
+}
+.page .plan.selected {
+	border-color: #107fc9;
+	background: #2683ff;
+}
+.page .plan.selected .plan-pricing {
+	color: #fff;
+	border-color: #107fc9;
+}
+.page .plan.selected h4 {
+	color: #fff;
+}
+.page .plan h4 {
+	font-size: 15px;
+	line-height: 0.75em;
+    padding: 0;
+}
+.page .btn-block {
+    max-width: none;
+    padding: 1em;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
 
 
 /* -------------------------------- 

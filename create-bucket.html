@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MetaDisk provides developers and IT teams with high performance, durable object storage.">
+    <meta name="keywords" content="metadisk, meta disk, storj, storj labs, decentralized storage, object storage, decentralized, cloud, storage, secure, private, encrypted">
+
+    <title>MetaDisk - The Most Secure Cloud Storage</title>
+
+    <meta property="og:title" content="MetaDisk - The Most Secure Cloud Storage"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="img/metadisk.png" />
+    <meta property="og:description" content="MetaDisk provides developers and IT teams with high performance, durable object storage."/>
+
+	<link rel="shortcut icon" href="img/favicon//favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon//favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/favicon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/modernizr.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="page">
+
+	<nav class="navbar navbar-default navbar-page">
+	  <div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <!-- <a class="navbar-brand" href="#">MetaDisk</a> -->
+	      <a href="index.html" class="navbar-brand">
+			<img src="img/logo-white.svg" alt="MetaDisk" class="logo">
+		  </a>
+	    </div>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="navbar-menu">
+	      <ul class="nav navbar-nav navbar-left">
+	      	<li><a href="buckets.html">Buckets</a></li>
+			<li><a href="http://slack.storj.io/">API</a></li>
+			<li><a href="">Billing</a></li>
+			<li><a href="">Support</a></li>
+	      </ul>
+	      <div class="navbar-right">
+	      	<a href="" class="btn btn-menu">Logout</a>
+	      </div>
+	    </div>
+	  </div>
+	</nav>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-push-2">
+
+					<h1 class="title">New Bucket</h1>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="content">
+								<label for="name">Bucket Name</label>
+								<input type="text" name="name" placeholder="Enter a name for your bucket">
+							</div>
+						</div>
+					</div>
+
+					<div class="content">
+						<label for="size">Bucket Size</label>
+						<div class="row plans text-center">
+
+							<div class="col-sm-4">
+								<div class="plan">
+									<div class="row">
+										<div class="col-xs-12">
+											<h2 class="plan-pricing">$5<span>per month</span></h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<h4 class="plan-feature-name">Storage</h4>
+											<h4 class="plan-feature-number">50 GB</h4>
+										</div>
+										<div class="col-xs-12">
+											<h4 class="plan-feature-name">Transfer</h4>
+											<h4 class="plan-feature-number">150 GB</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="plan selected">
+									<div class="row">
+										<div class="col-xs-12">
+											<h2 class="plan-pricing">$10<span>per month</span></h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<h4 class="plan-feature-name">Storage</h4>
+											<h4 class="plan-feature-number">100 GB</h4>
+										</div>
+										<div class="col-xs-12">
+											<h4 class="plan-feature-name">Transfer</h4>
+											<h4 class="plan-feature-number">300 GB</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="plan">
+									<div class="row">
+										<div class="col-xs-12">
+											<h2 class="plan-pricing">$20<span>per month</span></h2>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<h4 class="plan-feature-name">Storage</h4>
+											<h4 class="plan-feature-number">200 GB</h4>
+										</div>
+										<div class="col-xs-12">
+											<h4 class="plan-feature-name">Transfer</h4>
+											<h4 class="plan-feature-number">60 GB</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="content">
+								<label for="public-key">Add Public Key</label>
+								<input type="text" name="public-key" placeholder="Enter your public key">						
+							</div>
+						</div>
+					</div>
+
+					<a href="" class="btn btn-green btn-block btn-create-bucket">Create Bucket</a>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		$('.plan').click(function(e) {
+	        e.preventDefault(); // prevent the default action
+	        e.stopPropagation(); // stop the click from bubbling
+	        $('.selected').removeClass('selected');
+	        $(this).addClass('selected');
+	    });
+	</script>
+
+</body>
+</html>

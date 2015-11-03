@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MetaDisk provides developers and IT teams with high performance, durable object storage.">
+    <meta name="keywords" content="metadisk, meta disk, storj, storj labs, decentralized storage, object storage, decentralized, cloud, storage, secure, private, encrypted">
+
+    <title>MetaDisk - The Most Secure Cloud Storage</title>
+
+    <meta property="og:title" content="MetaDisk - The Most Secure Cloud Storage"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="img/metadisk.png" />
+    <meta property="og:description" content="MetaDisk provides developers and IT teams with high performance, durable object storage."/>
+
+	<link rel="shortcut icon" href="img/favicon//favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon//favicon.ico" type="image/x-icon">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/favicon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/modernizr.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="page">
+
+	<nav class="navbar navbar-default navbar-page">
+	  <div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <!-- <a class="navbar-brand" href="#">MetaDisk</a> -->
+	      <a href="index.html" class="navbar-brand">
+			<img src="img/logo-white.svg" alt="MetaDisk" class="logo">
+		  </a>
+	    </div>
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="navbar-menu">
+	      <ul class="nav navbar-nav navbar-left">
+	      	<li><a href="" class="active">Buckets</a></li>
+			<li><a href="http://slack.storj.io/">API</a></li>
+			<li><a href="">Billing</a></li>
+			<li><a href="">Support</a></li>
+	      </ul>
+	      <div class="navbar-right">
+	      	<a href="" class="btn btn-menu">Logout</a>
+	      </div>
+	    </div>
+	  </div>
+	</nav>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-push-2 col-md-12">
+					
+				<div>
+					<h1 class="title pull-left">Buckets</h1>
+		      		<a href="create-bucket.html" class="btn btn-green btn-menu pull-right">Create Bucket</a>				
+				</div>
+
+
+	      		</div>
+				<div class="col-lg-8 col-lg-push-2 col-md-12">
+
+					<div class="table-responsive content">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th class="bucket-plan">Bucket</th>
+									<th class="bucket-storage">Storage</th>
+									<th class="bucket-transfer">Transfer</th>
+									<th class="bucket-status">Status</th>
+								</tr>
+							</thead>
+								<tbody>
+								<tr class="clickable-row" data-href="">
+									<td class="bucket-plan">
+										<a href="">Free Bucket</a>
+									</td>
+									<td class="bucket-storage">
+										10 GB
+									</td>
+									<td class="bucket-transfer">
+										20 GB
+									</td>
+									<td class="bucket-status">
+										Active
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		jQuery(document).ready(function($) {
+		    $(".clickable-row").click(function() {
+		        window.document.location = $(this).data("href");
+		    });
+		});
+	</script>
+
+</body>
+</html>
