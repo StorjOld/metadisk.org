@@ -1,113 +1,5 @@
 // Particles
 
-// particlesJS("particles-js", {
-//   "particles": {
-//     "number": {
-//       "value": 80,
-//       "density": {
-//         "enable": true,
-//         "value_area": 800
-//       }
-//     },
-//     "limit": 20,
-//     "color": {
-//       "value": "#ffffff"
-//     },
-//     "shape": {
-//       "type": "circle",
-//       "stroke": {
-//         "width": 0,
-//         "color": "#000000"
-//       },
-//       "polygon": {
-//         "nb_sides": 5
-//       }
-//     },
-//     "opacity": {
-//       "value": 0.8,
-//       "random": true,
-//       "anim": {
-//         "enable": true,
-//         "speed": 1,
-//         "opacity_min": 0.1,
-//         "sync": true
-//       }
-//     },
-//     "size": {
-//       "value": 3,
-//       "random": true,
-//       "anim": {
-//         "enable": true,
-//         "speed": 10,
-//         "size_min": 0.1,
-//         "sync": false
-//       }
-//     },
-//     "line_linked": {
-//       "enable": false,
-//       "distance": 150,
-//       "color": "#ffffff",
-//       "opacity": 0.2,
-//       "width": 1
-//     },
-//     "move": {
-//       "enable": true,
-//       "speed": 3,
-//       "direction": "none",
-//       "random": false,
-//       "straight": false,
-//       "out_mode": "out",
-//       "bounce": false,
-//       "attract": {
-//         "enable": false,
-//         "rotateX": 600,
-//         "rotateY": 1200
-//       }
-//     }
-//   },
-//   "interactivity": {
-//     "detect_on": "canvas",
-//     "events": {
-//       "onhover": {
-//         "enable": true,
-//         "mode": "bubble"
-//       },
-//       "onclick": {
-//         "enable": true,
-//         "mode": "push"
-//       },
-//       "resize": true
-//     },
-//     "modes": {
-//       "grab": {
-//         "distance": 140,
-//         "line_linked": {
-//           "opacity": 1
-//         }
-//       },
-//       "bubble": {
-//         "distance": 100,
-//         "size": 4,
-//         "duration": 40,
-//         "opacity": 2,
-//         "speed": 2
-//       },
-//       "repulse": {
-//         "distance": 200,
-//         "duration": 0.4
-//       },
-//       "push": {
-//         "particles_nb": 4
-//       },
-//       "remove": {
-//         "particles_nb": 2
-//       }
-//     }
-//   },
-//   "retina_detect": true
-// });
-
-
 particlesJS("particles-js", {
   "particles": {
     "number": {
@@ -216,9 +108,10 @@ particlesJS("particles-js", {
 });
 
 
-// Animated Headlines
-
 jQuery(document).ready(function($){
+
+	// Animated Headlines
+
 	//set animation timing
 	var animationDelay = 2500,
 		//loading bar effect
@@ -236,7 +129,6 @@ jQuery(document).ready(function($){
 	
 	initHeadline();
 	
-
 	function initHeadline() {
 		//insert <i> element for each letter of a changing word
 		singleLetters($('.cd-headline.letters').find('b'));
@@ -373,23 +265,10 @@ jQuery(document).ready(function($){
 	}
 
 
-// Storage & Users Counters
-
-  // $.getJSON("http://switch.driveshare.org/api/total", function(json){
-  //     var storageCount = json.total_TB;
-  //     var count = new CountUp("storage-count", 0, storageCount, 0, 2.5);
-  //     count.start();
-  //     $(".storage-tb").show();
-
-  //     var farmersCount = json.total_farmers;
-  //     var count = new CountUp("user-count", 0, farmersCount, 0, 2.5);
-  //     count.start();
-  // });
-
+	// Storage & Users Counters
 
 	var storageCount = 0;
 	var count;
-
 	var farmersCount = 0;
 	var count2;
 
@@ -398,28 +277,24 @@ jQuery(document).ready(function($){
 	  count = new CountUp("storage-count", 0, storageCount, 0, 2.5);
 	  count.start();
 	  $(".storage-tb").show();
-
 	  farmersCount = json.total_farmers;
 	  count2 = new CountUp("user-count", 0, farmersCount, 0, 2.5);
 	  count2.start();
-
 	  apiTotal();
-
-	}); 
+	});
 
 	var canCallAgain = true;
+
 	function apiTotal(){
 	    canCallAgain = false;
 	    $.getJSON("http://status.driveshare.org/api/total", function(json){
 	        storageCount = json.total_TB;
 	        count.update(storageCount);
-
 	        farmersCount = json.total_farmers;
 		    count2.update(farmersCount);
 	        canCallAgain = true;
 		  }); 
 		};
-
 	setInterval(function(){
 	    if(canCallAgain)
 	        apiTotal();
@@ -435,10 +310,14 @@ jQuery(document).ready(function($){
         event.preventDefault();
     });
 
+
+    // Pricing plan update
     $('#plan-select').change(function(){
     	$('#plan-select-storage').html($(this).val());
 	});
 
+
+	// Get started button transition
 	$('#getStarted').on('click', function(){
 		$('#getStarted').hide();
 		$('#getStartedForm').fadeIn();

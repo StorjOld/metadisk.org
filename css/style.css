@@ -635,7 +635,7 @@ Pricing
 -------------------------------- */
 
 .section {
-	padding: 4em 0 6em;
+	padding: 4em 0 5em;
 	background: #f5f7f9;
 }
 .section h1 {
@@ -683,11 +683,14 @@ Pricing
     padding: 5px;
     width: auto;
     color: #2683FF;
+    background: url("../img/icon-dropdown.svg") right no-repeat;
     line-height: 1.6em;
     font-size: 72px;
     letter-spacing: -4px;
     height: 110px;
     cursor: pointer;
+    padding-right: 30px;
+    padding-left: 26px;
     appearance:none;
 	-moz-appearance:none; /* Firefox */
 	-webkit-appearance:none; /* Safari and Chrome */
@@ -700,6 +703,10 @@ Pricing
     color: transparent;
     text-shadow: 0 0 0 #2683ff;
 }
+.plan-pricing select::-ms-expand {
+	display: none;
+}
+
 .plan h4 {
     line-height: 1.5em;
     padding-top: 2px;
@@ -714,7 +721,6 @@ Pricing
 .plan-feature-number, .plan-select-storage {
 	font-family: 'Avenir Next LT Pro Bold';
     margin-bottom: 1.5em;
-
 }
 
 .plan.recommend {
@@ -756,6 +762,9 @@ Pricing
 	border-top: 10px solid #2683ff;
 }
 
+#getStarted {
+	margin-bottom: 1em;
+}
 .get-started-form {
 	display: none;
 }
@@ -769,6 +778,7 @@ Pricing
 }
 .get-started-form .email {
 	padding: 11px 20px;
+	margin-bottom: 1em;
 }
 
 
@@ -798,6 +808,7 @@ Upload Section
 .upload-metadisk {
 	width: 100%;
 	max-width: 460px;
+	margin-bottom: 1em;
 }
 
 .upload-intro {
@@ -1131,6 +1142,14 @@ Media Queries
     .text-center-sm {
       text-align: center;
     }
+    .upload {
+		padding: 0;
+		margin: 1em auto;
+    }
+    .upload-metadisk {
+    	margin-top: 1em;
+    }
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
