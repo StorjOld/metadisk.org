@@ -1097,6 +1097,9 @@ Media Queries
 
 
 @media all and (max-width: 768px) {
+	.navbar-page .logo {
+		margin-left: 0;
+	}
 	footer {
 		text-align: center;
 	}
