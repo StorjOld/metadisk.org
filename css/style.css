@@ -993,9 +993,6 @@ body.page {
 	background: #f5f7f9;
 	padding-bottom: 3em;
 }
-.table {
-	margin-bottom: 0;
-}
 .content {
 	border: 2px solid #eee;
     background: #fff;
@@ -1005,6 +1002,9 @@ body.page {
 }
 label {
 	margin-bottom: 0.8em;
+}
+.table {
+	margin-bottom: 0;
 }
 .table-responsive.content {
 	padding: 0;
@@ -1096,19 +1096,7 @@ Media Queries
 -------------------------------- */
 
 
-@media all and (max-width: 768px) {
-	.navbar-page .logo {
-		margin-left: 0;
-	}
-	footer {
-		text-align: center;
-	}
-	.footer-logo img {
-		margin: 1em auto 0.1em;
-	}
-}
-
-@media all and (max-width: 480px) {
+@media (max-width: 480px) {
 	.logo {
     	width: 160px;
 	}
@@ -1152,6 +1140,15 @@ Media Queries
     .text-center-xs {
       text-align: center;
     }
+    .navbar-page .logo {
+		margin-left: 0;
+	}
+	footer {
+		text-align: center;
+	}
+	.footer-logo img {
+		margin: 1em auto 0.1em;
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
