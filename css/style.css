@@ -864,7 +864,7 @@ input:focus{
 }
 
 ::-webkit-input-placeholder {
-    color: #2683FF;
+    color: #aaa;
 }
 :focus::-webkit-input-placeholder {
     color: #BAD7FE;
@@ -872,7 +872,7 @@ input:focus{
 
 /* Firefox < 19 */
 :-moz-placeholder {
-    color: #2683FF;
+    color: #aaa;
 }
 :focus:-moz-placeholder {
     color: #BAD7FE;
@@ -880,7 +880,7 @@ input:focus{
 
 /* Firefox > 19 */
 ::-moz-placeholder {
-    color: #2683FF;
+    color: #aaa;
 }
 :focus::-moz-placeholder {
     color: #BAD7FE;
@@ -888,9 +888,40 @@ input:focus{
 
 /* Internet Explorer 10 */
 :-ms-input-placeholder {
-    color: #2683FF;
+    color: #aaa;
 }
 :focus:-ms-input-placeholder {
+    color: #BAD7FE;
+}
+
+.email::-webkit-input-placeholder {
+    color: #2683FF;
+}
+.email:focus::-webkit-input-placeholder {
+    color: #BAD7FE;
+}
+
+/* Firefox < 19 */
+.email:-moz-placeholder {
+    color: #2683FF;
+}
+.email:focus:-moz-placeholder {
+    color: #BAD7FE;
+}
+
+/* Firefox > 19 */
+.email::-moz-placeholder {
+    color: #2683FF;
+}
+.email:focus::-moz-placeholder {
+    color: #BAD7FE;
+}
+
+/* Internet Explorer 10 */
+.email:-ms-input-placeholder {
+    color: #2683FF;
+}
+.email:focus:-ms-input-placeholder {
     color: #BAD7FE;
 }
 
