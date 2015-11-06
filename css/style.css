@@ -859,20 +859,8 @@ input:focus{
     max-width: 100%;
     background: #f9f9f9;
 }
-.contact .email {
-	padding: 12px 25px;
-	max-width: 300px;
-	color: #2683FF;
-	display: block;
-}
-.contact .email:active, .contact .email:focus {
-	border-color: #f9f9f9;
-	outline: 0;
-}
-.contact form {
-	padding: 1em;
-	padding-top: 6em;
-	padding-bottom: 7.5em;
+#publicKeys input {
+	margin-top: 20px;
 }
 
 ::-webkit-input-placeholder {

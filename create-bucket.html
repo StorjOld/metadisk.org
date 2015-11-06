@@ -147,9 +147,11 @@
 
 					<div class="row">
 						<div class="col-sm-12">
-							<div class="content">
+							<div class="content" id="publicKeys">
 								<label for="public-key">Add Public Key</label>
-								<input type="text" name="public-key" placeholder="Enter your public key">						
+								<a href="" class="pull-right" id="newKey">+ Add More Keys</a>
+								<input type="text" name="public-key" placeholder="Enter your public key">
+
 							</div>
 						</div>
 					</div>
@@ -171,6 +173,13 @@
 	        $('.selected').removeClass('selected');
 	        $(this).addClass('selected');
 	    });
+
+	    $('#newKey').click(function() {
+		    var newKey = document.createElement('input');
+		    $(newKey).attr("placeholder", "Enter your public key");
+		    document.getElementById('publicKeys').appendChild(newKey);
+		    return false;
+		});
 	</script>
 
 </body>
