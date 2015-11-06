@@ -151,7 +151,6 @@ canvas {
 }
 .navbar-default .navbar-collapse.in{
     border-color: transparent;
-    margin-top: 1em;
 }
 .navbar-collapse.in li {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -174,7 +173,7 @@ canvas {
 
 .navbar-default .navbar-nav>li>a {
 	display: inline-block;
-	color: #fff;
+	color: #fff !important;
 	font-weight: bold;
 	padding: 16px;
 }
@@ -198,6 +197,7 @@ canvas {
 }
 .navbar-page .navbar-nav>li>a {
 	padding: 30px 16px;
+	width: 100%;
 	color: #AFD1FF;
 }
 .navbar-page .navbar-nav>li>a:hover {
@@ -298,8 +298,13 @@ canvas {
 }
 
 .btn-menu {
-	margin-top:18px;
+	margin: 18px;
 	padding: 12px 32px 10px;
+}
+
+.btn-action {
+	margin-top: 18px;
+    padding: 12px 36px 10px;
 }
 
 .email {
@@ -1142,6 +1147,12 @@ Media Queries
     }
     .navbar-page .logo {
 		margin-left: 0;
+	}
+	.navbar-right {
+		text-align: center;
+	}
+	.btn-menu {
+		width: 100%;
 	}
 	footer {
 		text-align: center;
