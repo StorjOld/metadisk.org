@@ -42,6 +42,7 @@ html * {
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
@@ -298,7 +299,7 @@ canvas {
 }
 
 .btn-menu {
-	margin: 18px;
+	margin: 18px 6px;
 	padding: 12px 32px 10px;
 }
 
