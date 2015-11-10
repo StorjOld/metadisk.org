@@ -298,6 +298,16 @@ canvas {
 	outline: 0;
 }
 
+.btn-red {
+  background: transparent;
+  border: 2px solid #fa6e50;
+  color: #fa6e50;
+}
+.btn-red:hover {
+    background: #fa6e50;
+    color: #fff;
+}
+
 .btn-menu {
 	margin: 18px 6px;
 	padding: 12px 32px 10px;
@@ -1066,10 +1076,10 @@ th, td {
     padding: 0;
 }
 .page .btn-block {
-    max-width: none;
+    max-width: 420px;
     padding: 1em;
-    border-radius: 3px;
     font-size: 18px;
+    margin: 0.5em auto;
 }
 
 

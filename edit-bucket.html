@@ -52,7 +52,7 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="navbar-menu">
 	      <ul class="nav navbar-nav navbar-left">
-	      	<li><a href="" class="active">Buckets</a></li>
+	      	<li><a href="buckets.html">Buckets</a></li>
 			<li><a href="http://slack.storj.io/">API</a></li>
 			<li><a href="">Billing</a></li>
 			<li><a href="">Support</a></li>
@@ -68,40 +68,44 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-lg-push-2 col-md-12">
-					<h1 class="title pull-left">Buckets</h1>	
-	      		</div>
-	      	</div>
-	      	<div class="row">
-				<div class="col-lg-8 col-lg-push-2 col-md-12">
-					<div class="table-responsive content">
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th class="bucket-plan">Bucket</th>
-									<th class="bucket-storage">Storage</th>
-									<th class="bucket-transfer">Transfer</th>
-									<th class="bucket-status">Status</th>
-								</tr>
-							</thead>
-								<tbody>
-								<tr class="clickable-row" data-href="">
-									<td class="bucket-plan">
-										<a href="edit-bucket.html">Free Bucket</a>
-									</td>
-									<td class="bucket-storage">
-										10 GB
-									</td>
-									<td class="bucket-transfer">
-										20 GB
-									</td>
-									<td class="bucket-status">
-										Active
-									</td>
-								</tr>
-							</tbody>
-						</table>
+				<div class="col-lg-8 col-lg-push-2">
+
+					<div class="row">
+						<div class="col-sm-12">
+							<h1 class="title pull-left">Edit Bucket</h1>
+							<a href="" class="btn btn-action pull-right btn-red">Delete Bucket</a>
+						</div>
 					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="content">
+								<label for="name">Bucket Name</label>
+								<input type="text" name="name" value="My Free Bucket">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="content" id="publicKeys">
+								<label for="public-key">Add Public Key</label>
+								<a href="" class="pull-right" id="newKey">+ Add More Keys</a>
+								<input type="text" name="public-key" placeholder="Enter your public key">
+
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-xs-6">
+							<a href="buckets.html" class="btn btn-block">Go Back</a>
+						</div>
+						<div class="col-xs-6">
+							<a href="buckets.html" class="btn btn-block btn-green btn-create-bucket">Save Bucket</a>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -111,10 +115,18 @@
 	<script src="js/bootstrap.min.js"></script>
 
 	<script>
-		jQuery(document).ready(function($) {
-		    $(".clickable-row").click(function() {
-		        window.document.location = $(this).data("href");
-		    });
+		$('.plan').click(function(e) {
+	        e.preventDefault(); // prevent the default action
+	        e.stopPropagation(); // stop the click from bubbling
+	        $('.selected').removeClass('selected');
+	        $(this).addClass('selected');
+	    });
+
+	    $('#newKey').click(function() {
+		    var newKey = document.createElement('input');
+		    $(newKey).attr("placeholder", "Enter your public key");
+		    document.getElementById('publicKeys').appendChild(newKey);
+		    return false;
 		});
 	</script>
 
