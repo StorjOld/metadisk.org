@@ -831,6 +831,7 @@ Contact
 	background-color: #144EBC;
 	background: url("../img/bg-contact.jpg") top center no-repeat;
 	background-size: cover;
+	padding: 5em 0 6em;
 }
 .contact h1 {
 	margin-bottom: 0.5em;
@@ -842,17 +843,16 @@ Contact
 }
 input {
 	display: block;
-	background: #fff;
-	border: 2px solid #ddd;
+	background: #fbfbfb;
+	border: 2px solid #eee;
 	border-radius: 50px;
-	font-size: 15px;
 	color: #2683FF;
-	padding: 10px 14px 8px;
+	padding: 12px 18px 10px;
 	margin: 25px auto;
 	width: 100%;
 	max-width: 320px;
     font-size: 16px;
-    font-weight: bold;
+    font-family: 'Avenir Next LT Pro Demi';
 }
 input:focus{
     outline: 0;
@@ -863,14 +863,13 @@ input:focus{
     border-radius: 3px;
     border-width: 1px;
     max-width: 100%;
-    background: #f9f9f9;
 }
 #publicKeys input {
 	margin-top: 20px;
 }
 
 ::-webkit-input-placeholder {
-    color: #aaa;
+    color: #afafaf;
 }
 :focus::-webkit-input-placeholder {
     color: #BAD7FE;
@@ -878,7 +877,7 @@ input:focus{
 
 /* Firefox < 19 */
 :-moz-placeholder {
-    color: #aaa;
+    color: #afafaf;
 }
 :focus:-moz-placeholder {
     color: #BAD7FE;
@@ -886,7 +885,7 @@ input:focus{
 
 /* Firefox > 19 */
 ::-moz-placeholder {
-    color: #aaa;
+    color: #afafaf;
 }
 :focus::-moz-placeholder {
     color: #BAD7FE;
@@ -894,7 +893,7 @@ input:focus{
 
 /* Internet Explorer 10 */
 :-ms-input-placeholder {
-    color: #aaa;
+    color: #afafaf;
 }
 :focus:-ms-input-placeholder {
     color: #BAD7FE;
@@ -1094,6 +1093,42 @@ Modals
 	margin-bottom: 2em;
 }
 
+/* -------------------------------- 
+
+Sign Up
+
+-------------------------------- */
+
+.signup {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#144ebc+0,185ee0+100 */
+	background: #144ebc; /* Old browsers */
+	background: -moz-linear-gradient(45deg,  #144ebc 0%, #185ee0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#144ebc), color-stop(100%,#185ee0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* IE10+ */
+	background: linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#144ebc', endColorstr='#185ee0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.signup .logo {
+	margin: 3em auto;
+	width: 200px;
+}
+.signup .btn {
+	margin-bottom: 1.5em;
+}
+.signup p {
+	color: #fff;
+}
+.signup .login {
+	color: #fff;
+	border-bottom: 1px solid;
+}
+.signup .login:hover {
+	border-bottom: 0;
+	text-decoration: none;
+}
+
 
 /* -------------------------------- 
 
@@ -1108,9 +1143,6 @@ Media Queries
 	}
 	.menu {
 		padding: 30px 0;
-	}
-	.contact form {
-		padding: 2em 2em 4em;
 	}
 	.pricing {
     	padding: 2em 0 4em;
