@@ -303,7 +303,7 @@ canvas {
   border: 2px solid #fa6e50;
   color: #fa6e50;
 }
-.btn-red:hover {
+.btn-red:hover, .btn-red:focus {
     background: #fa6e50;
     color: #fff;
 }
