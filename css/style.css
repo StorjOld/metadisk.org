@@ -1093,12 +1093,17 @@ Modals
 .modal {
 	top: 120px;
 }
-
 .modal-body {
-	padding: 10px 30px;
+	padding: 1.5em 1em 1em
+}
+.modal-footer {
+	padding: 1.5em;
 }
 
-.modal .btn {
+#loginModal .modal-body {
+	padding: 10px 30px;
+}
+#loginModal .btn {
 	margin: 0;
 	margin-bottom: 2em;
 }
