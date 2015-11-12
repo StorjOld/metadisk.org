@@ -313,7 +313,10 @@ jQuery(document).ready(function($){
 
     // Pricing plan update
     $('#plan-select').change(function(){
-    	$('#plan-select-storage').html($(this).val());
+    	var storage = $(this).val();
+    	var transfer = storage*3;
+    	$('#plan-select-storage').html(storage);
+    	$('#plan-select-transfer').html(transfer);
 	});
 
 

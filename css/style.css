@@ -734,7 +734,7 @@ Pricing
 	font-size: 36px;
 	vertical-align: top;
 }
-.plan-feature-number, .plan-select-storage {
+.plan-feature-number, .plan-select-storage, .plan-select-transfer {
 	font-family: 'Avenir Next LT Pro Bold';
     margin-bottom: 1.5em;
 }
