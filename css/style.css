@@ -30,19 +30,19 @@ Main
 -------------------------------- */
 
 *, *::after, *::before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 html {
-  font-size: 62.5%;
-  height: 100%;
+	font-size: 62.5%;
+	height: 100%;
 }
 
 body {
@@ -51,7 +51,14 @@ body {
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+a:hover {
+	color: #173AE8
 }
 
 h1, h2, h3, h4, h5, h6, a, p, span {
@@ -74,6 +81,7 @@ h1 {
 }
 h1.title {
 	margin-bottom: 1em;
+	color: #333;
 }
 b {
 	font-family:'Avenir Next LT Pro Demi';
@@ -86,36 +94,100 @@ img {
 	user-select: none;
 }
 
+
 /* -------------------------------- 
 
-Header
+Buttons
 
 -------------------------------- */
 
-canvas {
-  display: block;
-  vertical-align: bottom;
+.btn {
+	font-family:'Avenir Next LT Pro Bold';
+	font-size: 14px;
+	background: #2683FF;
+	color: #FFF;
+	padding: 14px 60px 12px;
+	z-index: 2;
+	border: 2px solid #2683ff;
+	border-radius: 3px;
+	outline: 0;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
+.btn:hover, .btn:focus {
+	color: #fff;
+	background: #173AE8;
+	border-color: #173AE8;
+	outline: 0;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+    outline: 0;
 }
 
-#particles-js {
-	position: absolute;
-	width: 100%;
-	height: 600px;
-	top: 0;
-	background-image: url("");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
+.btn-transparent {
+	background: transparent;
+	border-color: #2683ff;
+	color: #2683ff;
 }
-#particles-js2 {
-	position: absolute;
-	width: 100%;
-	height: 420px;
-	background-image: url("");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
+.btn-transparent:hover {
+	background: #2683ff;
+	color: #fff;
+	border-color: #2683ff;
 }
+
+.btn-green {
+	border-color:#88C425;
+	color: #fff;
+	position: relative;
+	background: #88C425;
+	z-index: 2;
+}
+.btn-green:hover, .btn-green:focus {
+	background: #91D127;
+	border-color: #91D127;
+	outline: 0;
+}
+
+.btn-red {
+  background: transparent;
+  border-color: #fa6e50;
+  color: #fa6e50;
+}
+.btn-red:hover, .btn-red:focus {
+    background: #fa6e50;
+    border-color: #fa6e50;
+    color: #fff;
+}
+
+.btn-menu {
+	margin: 18px 6px;
+	padding: 12px 32px 10px;
+}
+
+.btn-action {
+	margin-top: 18px;
+    padding: 12px 36px 10px;
+}
+
+.subscribe {
+    margin-top: 0;
+    width: auto;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+
+/* -------------------------------- 
+
+Navigation
+
+-------------------------------- */
 
 .navbar-brand {
 	padding: 0;
@@ -175,7 +247,6 @@ canvas {
 .navbar-default .navbar-nav>li>a {
 	display: inline-block;
 	color: #fff !important;
-	font-weight: bold;
 	padding: 16px;
 }
 .navbar-default .navbar-nav>li>a:hover {
@@ -183,33 +254,24 @@ canvas {
 }
 
 .navbar-page {
-	background: #144EBC;
 	border: 0;
+	border-bottom: 2px solid #eee;
 	border-radius: 0;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#144ebc+0,185ee0+100 */
-	background: #144ebc; /* Old browsers */
-	background: -moz-linear-gradient(45deg,  #144ebc 0%, #185ee0 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#144ebc), color-stop(100%,#185ee0)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* IE10+ */
-	background: linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#144ebc', endColorstr='#185ee0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background: #fff;
 }
 .navbar-page .navbar-nav>li>a {
 	padding: 30px 16px;
 	width: 100%;
-	color: #AFD1FF;
+	color: #2683ff;
 }
 .navbar-page .navbar-nav>li>a:hover {
-	color: #fff;
+	color: #173AE8;
 }
 .navbar-page .navbar-nav>li>a.active {
-	color: #fff;
-	background: #2683ff
+	border-bottom: 2px solid #173AE8;
 }
 .navbar-page .navbar-brand {
-	margin: 15px 30px 15px 15px;
+	margin: 15px 25px 15px 15px;
 }
 .navbar-page .logo {
 	margin-left: 15px;
@@ -217,155 +279,78 @@ canvas {
 .navbar-page .navbar-toggle {
 	margin-top: 22px;
     margin-right: 22px;
+    border: 2px solid #2683ff;
+}
+.navbar-page .navbar-toggle .icon-bar {
+	background: #2683ff;
 }
 
-.header {
-	min-height: 600px;
-	background-color: #144EBC;
-	background: url("../img/bg-home.jpg") top center no-repeat;
-	background-size: cover;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none;
-}
-.thankyou .header {
-	min-height: 500px;
-	background: #144EBC;
-}
 
-.headlines {
-	padding-top: 1em;
-	padding-bottom: 2em;
-	max-width: 800px;
-	margin: 0 auto;
-	position: relative;
-	z-index: 2;
-	padding: 1em;
-}
-.headlines h1 {
-	font-size:42px;
-	color: #fff;
-}
-.headlines p {
-	padding-top: 10px;
-	padding-bottom: 25px;
-	max-width: 600px;
-	font-size: 21px;
-	margin: 0 auto;
-	color: #fff;
-}
+/* -------------------------------- 
 
-.btn {
-	font-family:'Avenir Next LT Pro Bold';
-	font-size: 16px;
-	border-radius: 25px;
-	padding: 12px 55px 10px;
-	border: 0;
-	background: #2683FF;
-	color: #FFF;
-	z-index: 2;
-	-webkit-backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
-	border-radius: 40px;
+Inputs
+
+-------------------------------- */
+
+input {
+	display: block;
+	background: #fbfbfb;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	color: #2683FF;
+	padding: 12px 18px 10px;
+	margin: 25px auto;
+	width: 100%;
 	max-width: 320px;
-	outline: 0;
+    font-size: 16px;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
 }
-.btn:hover, .btn:focus {
-	color: #fff;
-	background: #173AE8;
-	outline: 0;
-}
-
-.btn:focus, .btn:active:focus {
+input:focus{
     outline: 0;
+    border-color: #2D86fb;
+}
+.page input {
+	margin: 10px 0;
+    border-radius: 3px;
+    border-width: 1px;
+    max-width: 100%;
+}
+#publicKeys input {
+	margin-top: 20px;
 }
 
-.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
-    outline: 0;
+::-webkit-input-placeholder {
+    color: #444;
 }
-
-.btn-green {
-	border: 0;
-	color: #fff;
-	position: relative;
-	background: #88C425;
-	z-index: 2;
+:focus::-webkit-input-placeholder {
+    color: #BAD7FE;
 }
-.btn-green:hover, .btn-green:focus {
-	background: #91D127;
-	outline: 0;
+:-moz-placeholder {
+    color: #444;
 }
-
-.btn-red {
-  background: transparent;
-  border: 2px solid #fa6e50;
-  color: #fa6e50;
+:focus:-moz-placeholder {
+    color: #BAD7FE;
 }
-.btn-red:hover, .btn-red:focus {
-    background: #fa6e50;
-    color: #fff;
+::-moz-placeholder {
+    color: #444;
 }
-
-.btn-menu {
-	margin: 18px 6px;
-	padding: 12px 32px 10px;
+:focus::-moz-placeholder {
+    color: #BAD7FE;
 }
-
-.btn-action {
-	margin-top: 18px;
-    padding: 12px 36px 10px;
+:-ms-input-placeholder {
+    color: #444;
+}
+:focus:-ms-input-placeholder {
+    color: #BAD7FE;
 }
 
 .email {
-	border-radius: 50px;
-	padding: 14px 20px;
-	font-size: 16px;
-	font-weight: bold;
 	margin-top: 0;
-	border: 0;
 }
 
-.email::-webkit-input-placeholder {
-   color: #1478fb;
-}
-
-.email:-moz-placeholder { /* Firefox 18- */
-   color: #1478fb;  
-}
-
-.email::-moz-placeholder {  /* Firefox 19+ */
-   color: #1478fb; 
-}
-
-.email:-ms-input-placeholder {  
-   color: #107fc9; 
-   	-webkit-transition: all 250ms;
-	-o-transition: all 250ms;
-	transition: all 250ms; 
-}
-.subscribe {
-    margin-top: 0;
-    width: auto;
-}
-
-.cloud {
-	position: fixed;
-	top: 50px;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none;
-}
-.cloud-1 {
-	left: 0;
-	top: 70px;
-}
-.cloud-2 {
-	right:0;
-}
 
 
 /* -------------------------------- 
@@ -513,84 +498,73 @@ Animated Headlines
   }
 }
 
-
 /* -------------------------------- 
 
-Intro
+Homepage
 
 -------------------------------- */
 
-.intro {
-	padding: 5em 0 6em;
-	background: url("../img/bg-intro.jpg") center bottom no-repeat;
-	background-size: 100%;
+canvas {
+  display: block;
+  vertical-align: bottom;
 }
-
-.intro-security {
-	display: block;
+#particles-js {
+	position: absolute;
 	width: 100%;
-	max-width: 400px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.intro h1, .intro p {
-	max-width: 400px;
-	margin: 1.2em auto 0;
-}
-
-.intro p {
-	font-size: 15px;
-	line-height: 1.6em;
-	text-align: justify;
-}
-
-
-/* -------------------------------- 
-
-Why
-
--------------------------------- */
-
-.why {
-	padding: 5em 0 7em;
-	background-color: #2683FF;
-	background-image: url(../img/why5.jpg);
-	background-position: center center;
+	height: 600px;
+	top: 0;
+	background-image: url("");
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: 50% 50%;
 }
-.why img {
-	max-height: 200px;
-	display: inline-block;
-	margin-top: 2.5em;
+#particles-js2 {
+	position: absolute;
+	width: 100%;
+	height: 420px;
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
 }
-.why h2 {
-	color: #fff;
+
+.header {
+	min-height: 600px;
+	background-color: #144EBC;
+	background: url("../img/bg-home.jpg") top center no-repeat;
+	background-size: cover;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
-.why p {
-	color: #fff;
-	font-size: 14px;
-	display: block;
+.thankyou .header {
+	min-height: 500px;
+	background: #144EBC;
 }
-.why-title {
-	display: block;
-	background: rgba(255, 255, 255, 0.13);
-	border: 1px dashed rgba(255, 255, 255, 0.38);
-	color: #fff;
-	font-family: 'Avenir Next LT Pro Bold';
-	border-radius: 4px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	line-height: 2.5em;
-	width: 150px;
-	text-align: center;
-	margin: 2em auto 1.5em;
-}
-.why-subtitle {
-	max-width: 280px;
+
+.headlines {
+	max-width: 800px;
 	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+	padding: 1em;
 }
+.headlines h1 {
+	font-size:42px;
+	color: #fff;
+}
+.headlines p {
+	padding-top: 10px;
+	padding-bottom: 25px;
+	max-width: 600px;
+	font-size: 21px;
+	margin: 0 auto;
+	color: #fff;
+}
+
+
 
 /* -------------------------------- 
 
@@ -604,13 +578,13 @@ Value Propositions
 }
 .value h4 {
 	text-transform: uppercase;
-	font-family: 'Avenir Next LT Pro Bold';
+	font-family: 'Avenir Next LT Pro Demi';
 	letter-spacing: 0;
-	margin-top: 1em;
+	margin-top: 1.2em;
 }
 .value p {
-	text-transform: uppercase;
-	font-size: 12px;
+	/*text-transform: uppercase;*/
+	/*font-size: 12px;*/
 	padding-bottom: 0.4em;
 }
 .value img {
@@ -631,7 +605,7 @@ Traction
 }
 .traction span{
 	text-transform: uppercase;
-	font-family: 'Avenir Next LT Pro Bold';
+	font-family: 'Avenir Next LT Pro Demi';
 	letter-spacing: 0;
 }
 .traction img {
@@ -662,9 +636,12 @@ Pricing
 }
 .plan {
 	background: #fff;
-	border: 2px solid #eee;
+	border: 1px solid #eee;
 	margin: 2em 0;
 	border-radius: 5px;
+}
+.home .plan {
+	border-width: 2px;
 }
 .plan-title {
 	line-height: 4em;
@@ -705,7 +682,7 @@ Pricing
     letter-spacing: -4px;
     height: 110px;
     cursor: pointer;
-    padding-right: 30px;
+    padding-right: 34px;
     padding-left: 26px;
     appearance:none;
 	-moz-appearance:none; /* Firefox */
@@ -818,7 +795,7 @@ Upload Section
 }
 .upload h4 {
 	text-transform: uppercase;
-    font-family: 'Avenir Next LT Pro Bold';
+    font-family: 'Avenir Next LT Pro Demi';
     letter-spacing: 0;
 }
 .upload-metadisk {
@@ -833,111 +810,23 @@ Upload Section
 
 /* -------------------------------- 
 
-Contact
+C2A
 
 -------------------------------- */
 
-.contact {
+.c2a {
 	background-color: #144EBC;
 	background: url("../img/bg-contact.jpg") top center no-repeat;
 	background-size: cover;
 	padding: 5em 0 6em;
 }
-.contact h1 {
+.c2a h1 {
 	margin-bottom: 0.5em;
 	color: #fff;
 }
-.contact p {
+.c2a p {
 	margin-bottom: 2em;
 	color: #fff;
-}
-input {
-	display: block;
-	background: #fbfbfb;
-	border: 2px solid #eee;
-	border-radius: 50px;
-	color: #2683FF;
-	padding: 12px 18px 10px;
-	margin: 25px auto;
-	width: 100%;
-	max-width: 320px;
-    font-size: 16px;
-    font-family: 'Avenir Next LT Pro Demi';
-}
-input:focus{
-    outline: 0;
-    border-color: #2D86fb;
-}
-.page input {
-	margin: 10px 0;
-    border-radius: 3px;
-    border-width: 1px;
-    max-width: 100%;
-}
-#publicKeys input {
-	margin-top: 20px;
-}
-
-::-webkit-input-placeholder {
-    color: #afafaf;
-}
-:focus::-webkit-input-placeholder {
-    color: #BAD7FE;
-}
-
-/* Firefox < 19 */
-:-moz-placeholder {
-    color: #afafaf;
-}
-:focus:-moz-placeholder {
-    color: #BAD7FE;
-}
-
-/* Firefox > 19 */
-::-moz-placeholder {
-    color: #afafaf;
-}
-:focus::-moz-placeholder {
-    color: #BAD7FE;
-}
-
-/* Internet Explorer 10 */
-:-ms-input-placeholder {
-    color: #afafaf;
-}
-:focus:-ms-input-placeholder {
-    color: #BAD7FE;
-}
-
-.email::-webkit-input-placeholder {
-    color: #2683FF;
-}
-.email:focus::-webkit-input-placeholder {
-    color: #BAD7FE;
-}
-
-/* Firefox < 19 */
-.email:-moz-placeholder {
-    color: #2683FF;
-}
-.email:focus:-moz-placeholder {
-    color: #BAD7FE;
-}
-
-/* Firefox > 19 */
-.email::-moz-placeholder {
-    color: #2683FF;
-}
-.email:focus::-moz-placeholder {
-    color: #BAD7FE;
-}
-
-/* Internet Explorer 10 */
-.email:-ms-input-placeholder {
-    color: #2683FF;
-}
-.email:focus:-ms-input-placeholder {
-    color: #BAD7FE;
 }
 
 
@@ -955,14 +844,12 @@ footer {
 }
 .footer-logo {
 	display: block;
-	border-bottom: 2px solid #f9f9f9;
 	margin-bottom: 0.75em;
 }
 .footer-logo img {
 	width: 120px;
 	display: block;
-    margin-top: 1.5em;
-    margin-bottom: 1em;
+    margin: 1.5em auto 1em;
 }
 
 footer a {
@@ -974,7 +861,6 @@ footer a {
 
 footer h4 {
     letter-spacing: 0;
-    border-bottom: 2px solid #f9f9f9;
     padding-bottom: 1em;
     margin-top: 1.5em;
     font-size: 16px;
@@ -1005,11 +891,11 @@ Buckets
 -------------------------------- */
 
 body.page {
-	background: #f5f7f9;
+	/*background: #f5f7f9;*/
 	padding-bottom: 3em;
 }
 .content {
-	border: 2px solid #eee;
+	border: 1px solid #eee;
     background: #fff;
     border-radius: 5px;
     padding: 2em;
@@ -1024,11 +910,17 @@ label {
 .table-responsive.content {
 	padding: 0;
 }
+tr {
+	-webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -ms-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+}
 th, td {
 	padding: 1.8em !important;
 }
 .table>thead>tr>th {
-    border-bottom: 2px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 .bucket-plan a {
 	font-family: 'Avenir Next LT Pro Demi';
@@ -1076,10 +968,9 @@ th, td {
     padding: 0;
 }
 .page .btn-block {
-    max-width: 420px;
-    padding: 1em;
-    font-size: 18px;
+    font-size: 16px;
     margin: 0.5em auto;
+    padding: 0.9em 0 0.8em;
 }
 
 
@@ -1131,6 +1022,7 @@ Sign Up
 }
 .signup .btn {
 	margin-bottom: 1.5em;
+	font-size: 16px;
 }
 .signup p {
 	color: #fff;
@@ -1156,8 +1048,15 @@ Media Queries
 	.logo {
     	width: 160px;
 	}
+	.btn {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.page .btn-block {
+		font-size: 16px;
+	}
 	.menu {
-		padding: 30px 0;
+		padding: 30px 0 20px;
 	}
 	.pricing {
     	padding: 2em 0 4em;
@@ -1198,9 +1097,14 @@ Media Queries
 	}
 	.navbar-right {
 		text-align: center;
+		padding-bottom: 1em;
+	}
+	.navbar-page .navbar-nav>li>a {
+		padding: 16px;
 	}
 	.btn-menu {
 		width: 100%;
+		margin: 0.5em 0;
 	}
 	footer {
 		text-align: center;
@@ -1227,6 +1131,13 @@ Media Queries
     .upload-metadisk {
     	margin-top: 1em;
     }
+    .navbar-page .navbar-brand {
+		margin-right: 0;
+	}
+	.btn-menu {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
     
 }
 
@@ -1252,4 +1163,8 @@ Media Queries
     .text-center-lg {
       text-align: center;
     }
+    .navbar-page {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
 }
