@@ -58,7 +58,7 @@ a {
     transition: all 0.15s ease-in-out;
 }
 a:hover {
-	color: #173AE8
+	color: #173AE8;
 }
 
 h1, h2, h3, h4, h5, h6, a, p, span {
@@ -83,6 +83,9 @@ h1.title {
 	margin-bottom: 1em;
 	color: #333;
 }
+p {
+	color: #555;
+}
 b {
 	font-family:'Avenir Next LT Pro Demi';
 }
@@ -102,7 +105,7 @@ Buttons
 -------------------------------- */
 
 .btn {
-	font-family:'Avenir Next LT Pro Bold';
+	font-family:'Avenir Next LT Pro Demi';
 	font-size: 14px;
 	background: #2683FF;
 	color: #FFF;
@@ -175,7 +178,6 @@ Buttons
 
 .subscribe {
     margin-top: 0;
-    width: auto;
     padding-top: 12px;
     padding-bottom: 10px;
     margin-bottom: 15px;
@@ -268,6 +270,9 @@ Navigation
 	color: #173AE8;
 }
 .navbar-page .navbar-nav>li>a.active {
+	border-bottom: 2px solid #2683ff;
+}
+.navbar-page .navbar-nav>li>a.active:hover {
 	border-bottom: 2px solid #173AE8;
 }
 .navbar-page .navbar-brand {
@@ -322,6 +327,11 @@ input:focus{
 	margin-top: 20px;
 }
 
+.email {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
 ::-webkit-input-placeholder {
     color: #444;
 }
@@ -345,10 +355,6 @@ input:focus{
 }
 :focus:-ms-input-placeholder {
     color: #BAD7FE;
-}
-
-.email {
-	margin-top: 0;
 }
 
 
@@ -574,17 +580,13 @@ Value Propositions
 
 .value {
 	padding: 1.5em 0;
-	border-bottom: 1px solid #E7E9EA;
 }
 .value h4 {
-	text-transform: uppercase;
 	font-family: 'Avenir Next LT Pro Demi';
 	letter-spacing: 0;
 	margin-top: 1.2em;
 }
 .value p {
-	/*text-transform: uppercase;*/
-	/*font-size: 12px;*/
 	padding-bottom: 0.4em;
 }
 .value img {
@@ -600,17 +602,15 @@ Traction
 
 .traction {
 	padding: 3em 0;
-	border-top: 1px solid #E7E9EA;
-	border-bottom: 1px solid #E7E9EA;
 }
 .traction span{
-	text-transform: uppercase;
 	font-family: 'Avenir Next LT Pro Demi';
 	letter-spacing: 0;
 }
 .traction img {
 	width: 62px;
-	margin-top: 0.5em;
+	margin-top: 0.8em;
+	margin-bottom: 0.5em;
 }
 .storage-tb {
 	display: none;
@@ -626,10 +626,11 @@ Pricing
 
 .section {
 	padding: 4em 0 5em;
-	background: #f5f7f9;
+	background: #f2f2f2;
 }
 .section h1 {
 	margin-bottom: 26px;
+	color: #333;
 }
 .plans {
 	margin: 1em auto;
@@ -638,10 +639,7 @@ Pricing
 	background: #fff;
 	border: 1px solid #eee;
 	margin: 2em 0;
-	border-radius: 5px;
-}
-.home .plan {
-	border-width: 2px;
+	border-radius: 4px;
 }
 .plan-title {
 	line-height: 4em;
@@ -651,7 +649,6 @@ Pricing
 	border-bottom: 1px solid #eee;
 }
 .plan-pricing {
-    font-family: 'Avenir Next LT Pro Bold';
     letter-spacing: 0;
     line-height: 2em;
     font-size: 42px;
@@ -659,6 +656,30 @@ Pricing
     margin-top: 16px;
     padding-bottom: 42px;
     border-bottom: 1px solid #eee;
+    font-family: 'Avenir Next LT Pro Demi';
+    color: #333;
+}
+.home .plan.recommend {
+	margin-top: 16px;
+}
+.plan.recommend .plan-title {
+    font-family: 'Avenir Next LT Pro Demi';
+    color: #2683ff;
+}
+.plan.recommend .plan-pricing {
+    font-family: 'Avenir Next LT Pro Demi';
+}
+.plan.recommend h4 {
+	color: #2683ff;
+}
+.plan.recommend .plan-pricing {
+    color: #2683FF;
+    line-height: 1.6em;
+    font-size: 72px;
+    letter-spacing: -8px;
+}
+.plan.recommend .plan-pricing span {
+	font-size: 24px;
 }
 .plan-pricing span {
 	display: block;
@@ -707,31 +728,13 @@ Pricing
     letter-spacing: 0;
 }
 .plan-currency {
-	font-family: 'Avenir Next LT Pro Bold';
+	font-family: 'Avenir Next LT Pro Demi';
 	font-size: 36px;
 	vertical-align: top;
 }
 .plan-feature-number, .plan-select-storage, .plan-select-transfer {
-	font-family: 'Avenir Next LT Pro Bold';
+	font-family: 'Avenir Next LT Pro Demi';
     margin-bottom: 1.5em;
-}
-
-.plan.recommend {
-	border-color: #2683FF;
-	margin-top: 16px;
-}
-.plan.recommend .plan-title {
-	background: #2683FF;
-	color: #fff;
-}
-.plan.recommend .plan-pricing {
-    color: #2683FF;
-    line-height: 1.6em;
-    font-size: 72px;
-    letter-spacing: -8px;
-}
-.plan.recommend .plan-pricing span {
-	font-size: 24px;
 }
 
 .select-arrows {
@@ -794,7 +797,6 @@ Upload Section
 	display: inline-block;
 }
 .upload h4 {
-	text-transform: uppercase;
     font-family: 'Avenir Next LT Pro Demi';
     letter-spacing: 0;
 }
@@ -818,7 +820,7 @@ C2A
 	background-color: #144EBC;
 	background: url("../img/bg-contact.jpg") top center no-repeat;
 	background-size: cover;
-	padding: 5em 0 6em;
+	padding: 6em 0;
 }
 .c2a h1 {
 	margin-bottom: 0.5em;
@@ -1048,7 +1050,7 @@ Media Queries
 	.logo {
     	width: 160px;
 	}
-	.btn {
+	.btn-action {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
@@ -1138,7 +1140,6 @@ Media Queries
 		padding-left: 15px;
 		padding-right: 15px;
 	}
-    
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -1166,5 +1167,8 @@ Media Queries
     .navbar-page {
 		padding-left: 30px;
 		padding-right: 30px;
+	}
+	.home .plan {
+		margin: 2em 1em;
 	}
 }
