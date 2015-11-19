@@ -324,6 +324,7 @@ jQuery(document).ready(function($){
 	$('#getStarted').on('click', function(){
 		$('#getStarted').hide();
 		$('#getStartedForm').fadeIn();
+		$('#getStartedEmail').focus();
 	});
 
 });
