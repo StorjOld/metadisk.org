@@ -143,16 +143,23 @@ Buttons
 }
 
 .btn-green {
-	border-color:#88C425;
+	border-color: #88C425;
 	color: #fff;
-	position: relative;
 	background: #88C425;
-	z-index: 2;
 }
 .btn-green:hover, .btn-green:focus {
 	background: #91D127;
 	border-color: #91D127;
-	outline: 0;
+}
+
+.btn-orange {
+	background: #FF7F00;
+	border-color: #FF7F00;
+	color: #fff;
+}
+.btn-orange:hover, .btn-orange:focus {
+	background: #FF6600;
+	border-color: #FF6600;
 }
 
 .btn-red {
@@ -196,7 +203,7 @@ Navigation
 }
 .logo {
     display: inline-block;
-    margin: 12px 30px;
+    margin: 12px 20px;
     width: 150px;
 }
 
@@ -270,10 +277,11 @@ Navigation
 	color: #173AE8;
 }
 .navbar-page .navbar-nav>li>a.active {
-	border-bottom: 2px solid #2683ff;
+	/*border-bottom: 2px solid #2683ff;*/
+	color: #173AE8;
 }
 .navbar-page .navbar-nav>li>a.active:hover {
-	border-bottom: 2px solid #173AE8;
+	/*border-bottom: 2px solid #173AE8;*/
 }
 .navbar-page .navbar-brand {
 	margin: 15px 25px 15px 15px;
@@ -534,16 +542,26 @@ canvas {
 	background-position: 50% 50%;
 }
 
+@keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	50% { background-position: 0 100%; }
+	100% { background-position: 0 0; }
+}
+
 .header {
 	min-height: 600px;
 	background-color: #144EBC;
-	background: url("../img/bg-home.jpg") top center no-repeat;
+	background: url("../img/bg.jpg") top center no-repeat;
 	background-size: cover;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-o-user-select: none;
 	user-select: none;
+	animation: animatedBackground 24s ease-in-out;
+	-webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+    animation-direction: alternate;
+	transform: translateZ(0);
 }
 .thankyou .header {
 	min-height: 500px;
@@ -569,6 +587,10 @@ canvas {
 	margin: 0 auto;
 	color: #fff;
 }
+.home .btn {
+	position: relative;
+	z-index: 2;
+}
 
 
 
@@ -580,14 +602,19 @@ Value Propositions
 
 .value {
 	padding: 1.5em 0;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+	z-index: 3;
+	position: relative;
 }
 .value h4 {
 	font-family: 'Avenir Next LT Pro Demi';
 	letter-spacing: 0;
 	margin-top: 1.2em;
+	color: #333;
 }
 .value p {
 	padding-bottom: 0.4em;
+	color: #777;
 }
 .value img {
 	height: 52px;
@@ -602,10 +629,17 @@ Traction
 
 .traction {
 	padding: 3em 0;
+	z-index: 3;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+	position: relative;
+}
+.traction h2 {
+	color: #777;
 }
 .traction span{
 	font-family: 'Avenir Next LT Pro Demi';
 	letter-spacing: 0;
+	color: #333;
 }
 .traction img {
 	width: 62px;
@@ -626,7 +660,9 @@ Pricing
 
 .section {
 	padding: 4em 0 5em;
-	background: #f2f2f2;
+	background-color: #f8f8f8;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 }
 .section h1 {
 	margin-bottom: 26px;
@@ -640,6 +676,7 @@ Pricing
 	border: 1px solid #eee;
 	margin: 2em 0;
 	border-radius: 4px;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
 }
 .plan-title {
 	line-height: 4em;
@@ -802,6 +839,7 @@ Upload Section
 .upload h4 {
     font-family: 'Avenir Next LT Pro Demi';
     letter-spacing: 0;
+    color: #333;
 }
 .upload-metadisk {
 	width: 100%;
@@ -821,7 +859,7 @@ C2A
 
 .c2a {
 	background-color: #144EBC;
-	background: url("../img/bg-contact.jpg") top center no-repeat;
+	background: url("../img/bg.jpg") top center no-repeat;
 	background-size: cover;
 	padding: 6em 0;
 }
@@ -842,7 +880,7 @@ Footer
 -------------------------------- */
 
 footer {
-	padding: 2em 0 2.5em;
+	padding: 2em 0;
 }
 .footer-logo:hover, .footer-logo:focus {
 	text-decoration: none;
@@ -852,24 +890,27 @@ footer {
 	margin-bottom: 0.75em;
 }
 .footer-logo img {
-	width: 120px;
+	width: 112px;
 	display: block;
-    margin: 1.5em auto 1em;
+    margin: 0.8em 0 0.5em;
 }
-
 footer a {
     padding-bottom: 2px;
     line-height: 34px;
     letter-spacing: 0;
     font-size: 14px;
 }
-
-footer h4 {
+footer p {
+	font-size: 14px;
+	line-height: 24px;
+	margin-bottom: 8px;
+}
+footer h5 {
     letter-spacing: 0;
-    padding-bottom: 1em;
-    margin-top: 1.5em;
-    font-size: 16px;
-    font-family:'Avenir Next LT Pro Demi';
+    padding-bottom: 0.5em;
+    margin-top: 1em;
+    color: #333;
+    font-family: 'Avenir Next LT Pro Demi';
 }
 footer .connect {
 	margin: 2em auto 1em;
@@ -884,10 +925,6 @@ footer .connect a {
 	opacity: 1;
 }
 
-.copyright:hover {
-	text-decoration: none;
-}
-
 
 /* -------------------------------- 
 
@@ -896,7 +933,7 @@ Buckets
 -------------------------------- */
 
 body.page {
-	/*background: #f5f7f9;*/
+	background: #f9f9f9;
 	padding-bottom: 3em;
 }
 .content {
@@ -929,6 +966,16 @@ th, td {
 }
 .bucket-plan a {
 	font-family: 'Avenir Next LT Pro Demi';
+}
+.bucket-icon {
+	padding: 22px 0 0 26px !important;
+    margin: 0;
+    width: 70px;
+}
+.bucket-icon img {
+	width: 42px;
+    padding: 0;
+    margin: 0;
 }
 .clickable-row {
 	cursor: pointer;
@@ -1050,6 +1097,9 @@ Media Queries
 
 
 @media (max-width: 480px) {
+	.section {
+		padding: 2em 0;
+	}
 	.logo {
     	width: 160px;
 	}
@@ -1072,11 +1122,15 @@ Media Queries
 	.traction img {
     	margin-top: 1.5em;
 	}
+	.c2a {
+		padding: 4em 1.5em;
+	}
 	footer {
 		text-align: center;
 	}
 	footer h4 {
-    	margin-top: 3em;
+    	margin-top: 2em;
+    	padding-bottom: 0;
 	}
 	.footer-logo p {
 	    display: block;
@@ -1158,6 +1212,9 @@ Media Queries
 }
 
 @media (min-width: 1200px) {
+	body.page .container {
+    	width: 1060px;
+	}
     .text-left-lg {
       text-align: left;
     }
