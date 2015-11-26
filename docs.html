@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link href="api/stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="api/stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <link href="api/stylesheets/style.css" rel="stylesheet" type="text/css" media="screen" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="api/javascripts/all.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="api/images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the MetaDisk API! Storj allows users to buy and sell their extra hard drive space into a global network. Storj uses a variety of technology including P2P networks, encryption, cryptographic auditing, and the Bitcoin blockchain to keep this network secure, private, and robust. These technologies make Storj a solid, but complex platform.</p>
+
+<p>MetaDisk will simplify that significantly by providing a simple API, service, and toolset to allow developers to PUT and GET data from the Storj platform. It also allows developers to pay via dollars, and not have to deal with the complexity of Bitcoin or other cryptocurrencies.</p>
+
+<h1 id="metadisk-rules">MetaDisk Rules</h1>
+
+<ol>
+<li>MetaDisk is a zero knowledge system. No plaintext data, no keys, or file metadata should ever stored or held by the service.</li>
+<li>MetaDisk is a transparent service, not a black box like traditional data storage services. File network status, node status, and independent audits of files should be able to be done at all times.</li>
+</ol>
+
+<h1 id="file-upload">File Upload</h1>
+
+<blockquote>
+<p>To upload file, use this code:</p>
+</blockquote>
+<pre class="highlight shell"><code>    curl
+        -F<span class="s2">"data_hash=3b438fd7b1f223890f18f8ffc50c19c00b08340fc4fc76a94ba3a1c160b332a0"</span> <span class="se">\</span>
+        -F<span class="s2">"file_role=000"</span> -F<span class="s2">"file_data=@file_name"</span> <span class="se">\</span>
+        -H<span class="s2">"sender_address: mn45zPRtyy159spQ77gR43NoJmZiw2fN3a"</span> <span class="se">\</span>
+        -H<span class="s2">"signature: IMiZ0ZJhC5kdORnGnfwBJm7ikyDSrl0Icqepd6XZIJCynYd5GLITTCbk4vCxuvGgnj4Z24ay6niXmqFxkctqu8U"</span> <span class="se">\</span>
+        /api/files/ 
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3b438fd7b1f223890f18f8ffc50c19c00b08340fc4fc76a94ba3a1c160b332a0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"file_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>User can upload data via POST to an end node.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/files/</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Params</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>POST</td>
+<td>data_hash</td>
+<td>string</td>
+<td>data_hash must be sent with each request. It ensures that the data passed to the endpoint has not been modified in transit. data_hash should be the SHA-256 hash of file_data</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>file_role</td>
+<td>string</td>
+<td>The uploading party needs to be able to set file roles. For example, if anyone can retrieve this file or only specified addresses. It contains three digits.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>file_data</td>
+<td>binary file</td>
+<td>Encrypted shard of the data. To ensure properly handling under the current specifications file_data should not be larger than 128 MB.</td>
+</tr>
+<tr>
+<td>HEADER</td>
+<td>sender_address</td>
+<td>string</td>
+<td>The Bitcoin public key of the user that is trying to POST data.</td>
+</tr>
+<tr>
+<td>HEADER</td>
+<td>signature</td>
+<td>string</td>
+<td>Produced by signing <code class="prettyprint">data_hash</code> by the private key belonging to <code class="prettyprint">sender_address</code>.</td>
+</tr>
+</tbody></table>
+
+<h1 id="file-download">File Download</h1>
+
+<p>User can download data via GET from an end node.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Params</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>HEADER</td>
+<td>sender_address</td>
+<td>string</td>
+<td>The Bitcoin public key of the user that is trying to POST data.</td>
+</tr>
+<tr>
+<td>HEADER</td>
+<td>signature</td>
+<td>string</td>
+<td>Produced by signing <code class="prettyprint">data_hash</code> by the private key belonging to <code class="prettyprint">sender_address</code>.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>To download data, use this code:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl
+    -X GET -H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
+    -H <span class="s2">"Accept: application/json"</span> <span class="se">\</span>
+        -H<span class="s2">"sender_address: mn45zPRtyy159spQ77gR43NoJmZiw2fN3a"</span> <span class="se">\</span>
+        -H<span class="s2">"signature: IMiZ0ZJhC5kdORnGnfwBJm7ikyDSrl0Icqepd6XZIJCynYd5GLITTCbk4vCxuvGgnj4Z24ay6niXmqFxkctqu8U"</span> <span class="se">\</span>
+    /api/files/3b438fd7b1f223890f18f8ffc50c19c00b08340fc4fc76a94ba3a1c160b332a0
+</code></pre>
+
+<blockquote>
+<p>The above command returns binary file data.</p>
+</blockquote>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/files/&lt;data_hash&gt;</code></p>
+
+<h1 id="node-info">Node Info</h1>
+
+<p>A quick glance at the nodes data usage.</p>
+<pre class="highlight shell"><code>curl
+    -X GET -H <span class="s2">"Content-type: application/json"</span> -H <span class="s2">"Accept: application/json"</span> <span class="se">\</span>
+    /api/nodes/me/
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"bandwidth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"current"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"incoming"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"outgoing"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"incoming"</span><span class="p">:</span><span class="w"> </span><span class="mi">1048576</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"outgoing"</span><span class="p">:</span><span class="w"> </span><span class="mi">2097152</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"incoming"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"outgoing"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"storage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"capacity"</span><span class="p">:</span><span class="w"> </span><span class="mi">104857600</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"max_file_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"used"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/nodes/me</code></p>
+
+<h1 id="file-list">File List</h1>
+
+<p>Get all files currently listed on the node.</p>
+<pre class="highlight shell"><code>curl
+    -X GET -H <span class="s2">"Content-type: application/json"</span> -H <span class="s2">"Accept: application/json"</span> <span class="se">\</span>
+    /api/files/
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="s2">"3b438fd7b1f223890f18f8ffc50c19c00b08340fc4fc76a94ba3a1c160b332a0"</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/files/</code></p>
+
+<h1 id="file-audit">File Audit</h1>
+
+<blockquote>
+<p>To audit file, use this code:</p>
+</blockquote>
+<pre class="highlight shell"><code>    curl
+        -F<span class="s2">"data_hash=3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7"</span> <span class="se">\</span>
+        -F<span class="s2">"challenge_seed=19b25856e1c150ca834cffc8b59b23adbd0ec0389e58eb22b3b64768098d002b"</span><span class="se">\</span>
+        -H<span class="s2">"sender_address: mn45zPRtyy159spQ77gR43NoJmZiw2fN3a"</span> <span class="se">\</span>
+        -H<span class="s2">"signature: IMiZ0ZJhC5kdORnGnfwBJm7ikyDSrl0Icqepd6XZIJCynYd5GLITTCbk4vCxuvGgnj4Z24ay6niXmqFxkctqu8U"</span> <span class="se">\</span>
+        /api/audit/ 
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"data_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"challenge_seed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19b25856e1c150ca834cffc8b59b23adbd0ec0389e58eb22b3b64768098d002b"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"challenge_response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a068cf9870a41ecc36e18be9277bc353f88e29ad8a1b2a778581b37453de7692"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>User can upload data via POST to an end node.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/audit/</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Params</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>POST</td>
+<td>data_hash</td>
+<td>string</td>
+<td>data_hash must be sent with each request. It ensures that the data passed to the endpoint has not been modified in transit. data_hash should be the SHA-256 hash of file_data</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>challenge_seed</td>
+<td>string</td>
+<td>A SHA-256 hash of that you would like to add to the file data to generate a challenge response.</td>
+</tr>
+<tr>
+<td>HEADER</td>
+<td>sender_address</td>
+<td>string</td>
+<td>The Bitcoin public key of the user that is trying to POST data.</td>
+</tr>
+<tr>
+<td>HEADER</td>
+<td>signature</td>
+<td>string</td>
+<td>Produced by signing <code class="prettyprint">data_hash</code> by the private key belonging to <code class="prettyprint">sender_address</code>.</td>
+</tr>
+</tbody></table>
+
+<h1 id="serve-files">Serve files</h1>
+
+<p>User can download encrypted data (for allowed files) via GET from an end node using a decryption key.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Params</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>HEADER</td>
+<td>sender_address</td>
+<td>string</td>
+<td>The Bitcoin public key of the user that is trying to POST data.</td>
+</tr>
+<tr>
+<td>HEADER</td>
+<td>signature</td>
+<td>string</td>
+<td>Produced by signing <code class="prettyprint">data_hash</code> by the private key belonging to <code class="prettyprint">sender_address</code>.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>To download data, use this code:</p>
+</blockquote>
+<pre class="highlight shell"><code>curl
+    -X GET -H <span class="s2">"Content-type: application/json"</span> <span class="se">\</span>
+    -H <span class="s2">"Accept: application/json"</span> <span class="se">\</span>
+    -H<span class="s2">"sender_address: mn45zPRtyy159spQ77gR43NoJmZiw2fN3a"</span> <span class="se">\</span>
+    -H<span class="s2">"signature: IMiZ0ZJhC5kdORnGnfwBJm7ikyDSrl0Icqepd6XZIJCynYd5GLITTCbk4vCxuvGgnj4Z24ay6niXmqFxkctqu8U"</span> <span class="se">\</span>
+    /api/files/3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7?decryption_key<span class="o">=</span>%A3%B4e%EA%82%00%22%3A%C3%86%C0hn1%B3%F7%F7%F8%8EL7S%F3D%28%7C%85%95%CE%9D%D5B&amp;file_alias<span class="o">=</span>data.txt
+</code></pre>
+
+<blockquote>
+<p>The above command returns binary file data as <code class="prettyprint">file_name</code>.</p>
+</blockquote>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET /api/files/&lt;data_hash&gt;?decryption_key=&lt;decryption_key&gt;&amp;file_alias=&lt;file_alias&gt;</code></p>
+
+          <h1 id="errors">Errors</h1>
+
+<aside class="notice">The MetaDisk API uses the following error codes:</aside>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Transfer errors</td>
+<td></td>
+</tr>
+<tr>
+<td>101</td>
+<td>Invalid SHA-256 hash</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Data hash doesn&rsquo;t match file data</td>
+</tr>
+<tr>
+<td>103</td>
+<td>File data is larger than 128MB</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Node has a full disk</td>
+</tr>
+<tr>
+<td>202</td>
+<td>Node has reached bandwidth limit</td>
+</tr>
+<tr>
+<td>301</td>
+<td>Particular hash not found</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Invalid signature</td>
+</tr>
+<tr>
+<td>Audit errors</td>
+<td></td>
+</tr>
+<tr>
+<td>101</td>
+<td>Invalid SHA-256 hash</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Invalid seed</td>
+</tr>
+<tr>
+<td>103</td>
+<td>File data is larger than 128MB</td>
+</tr>
+<tr>
+<td>301</td>
+<td>Particular hash not found</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Invalid signature</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>

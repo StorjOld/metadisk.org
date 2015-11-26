@@ -1088,6 +1088,25 @@ Sign Up
 	text-decoration: none;
 }
 
+/* -------------------------------- 
+
+Sign Up
+
+-------------------------------- */
+
+.api {
+	height: 100%;
+}
+
+.api .navbar {
+	margin-bottom: 0;
+}
+
+.api-iframe {
+	width: 100%;
+	height: 100%;
+}
+
 
 /* -------------------------------- 
 
