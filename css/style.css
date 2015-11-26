@@ -277,11 +277,7 @@ Navigation
 	color: #173AE8;
 }
 .navbar-page .navbar-nav>li>a.active {
-	/*border-bottom: 2px solid #2683ff;*/
-	color: #173AE8;
-}
-.navbar-page .navbar-nav>li>a.active:hover {
-	/*border-bottom: 2px solid #173AE8;*/
+	box-shadow: 0 2px #2683ff;
 }
 .navbar-page .navbar-brand {
 	margin: 15px 25px 15px 15px;
