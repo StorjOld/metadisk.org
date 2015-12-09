@@ -638,7 +638,7 @@ Traction
 	color: #003366;
 }
 .traction img {
-	width: 62px;
+	height: 52px;
 	margin-top: 0.8em;
 	margin-bottom: 0.5em;
 }
@@ -685,12 +685,18 @@ Pricing
     letter-spacing: 0;
     line-height: 2em;
     font-size: 42px;
-    margin-bottom: 16px;
     margin-top: 16px;
     padding-bottom: 42px;
-    border-bottom: 1px solid #eee;
     font-family: 'Avenir Next LT Pro Demi';
     color: #003366;
+}
+.home .plan-pricing {
+	margin-top: 0;
+}
+.plan-icon {
+	margin-top: 1.5em;
+    margin-bottom: 0.2em;
+    width: 52px;
 }
 .home .plan.recommend {
 	margin-top: 16px;
