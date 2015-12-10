@@ -326,5 +326,11 @@ jQuery(document).ready(function($){
 		$('#getStartedForm').fadeIn();
 		$('#getStartedEmail').focus();
 	});
+	// Get started button transition
+	$('#getStarted2').on('click', function(){
+		$('#getStarted2').hide();
+		$('#getStartedForm2').fadeIn();
+		$('#getStartedEmail2').focus();
+	});
 
 });

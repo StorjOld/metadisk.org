@@ -674,6 +674,11 @@ Pricing
 	border-radius: 4px;
 	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
 }
+.plan-icon {
+	margin-top: 1.5em;
+    margin-bottom: 0.2em;
+    width: 52px;
+}
 .plan-title {
 	line-height: 4em;
 	text-transform: uppercase;
@@ -693,33 +698,6 @@ Pricing
 .home .plan-pricing {
 	margin-top: 0;
 }
-.plan-icon {
-	margin-top: 1.5em;
-    margin-bottom: 0.2em;
-    width: 52px;
-}
-.home .plan.recommend {
-	margin-top: 16px;
-}
-.plan.recommend .plan-title {
-    font-family: 'Avenir Next LT Pro Demi';
-    color: #2683ff;
-}
-.plan.recommend .plan-pricing {
-    font-family: 'Avenir Next LT Pro Demi';
-}
-.plan.recommend h4 {
-	color: #2683ff;
-}
-.plan.recommend .plan-pricing {
-    color: #2683FF;
-    line-height: 1.6em;
-    font-size: 72px;
-    letter-spacing: -8px;
-}
-.plan.recommend .plan-pricing span {
-	font-size: 24px;
-}
 .plan-pricing span {
 	display: block;
 	letter-spacing: 0;
@@ -727,43 +705,11 @@ Pricing
     line-height: 0;
     background: #fff;
 }
-.plan-pricing select {
-	display: inline-block;
-	border: 0;
-    box-shadow: none;
-    text-align: center;
-    margin: 0 auto;
-    padding: 5px;
-    width: auto;
-    color: #2683FF;
-    background: url("../img/icon-dropdown.svg") right no-repeat;
-    line-height: 1.6em;
-    font-size: 72px;
-    letter-spacing: -4px;
-    height: 110px;
-    cursor: pointer;
-    padding-right: 34px;
-    padding-left: 26px;
-    appearance:none;
-	-moz-appearance:none; /* Firefox */
-	-webkit-appearance:none; /* Safari and Chrome */
-}
-.plan-pricing select:focus {
-	outline: 0;
-	box-shadow: none;
-}
-.plan-pricing select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #2683ff;
-}
-.plan-pricing select::-ms-expand {
-	display: none;
-}
 
 .plan h4 {
     line-height: 1.5em;
     padding-top: 2px;
-    color: #003366;
+    color: #333;
     letter-spacing: 0;
 }
 .plan-currency {
@@ -776,25 +722,44 @@ Pricing
     margin-bottom: 1.5em;
 }
 
-.select-arrows {
-	display: inline-block;
-	vertical-align: middle;
-    height: 42px;
+.compare {
+	background: #fff;
+	border-top: 0;
 }
-.arrow-up {
-	width: 0; 
-	height: 0; 
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-bottom: 10px solid #2683ff;
-	margin-bottom: 10px;
+.compare-table {
+	margin: 2em auto;
 }
-.arrow-down {
-	width: 0; 
-	height: 0; 
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-	border-top: 10px solid #2683ff;
+.compare-logo {
+    width: auto;
+    height: 64px;
+    margin-top: 1.4em;
+}
+.compare-product {
+	height: 7em;
+	border-bottom: 1px solid #eee;
+}
+.compare-metadisk {
+	background: #f9f9f9;
+	border-top: 1px solid #eee;
+}
+.compare-metadisk .compare-logo {
+	max-width: 160px;
+}
+.compare-metadisk .compare-pricing {
+	color: #2683ff;
+}
+.compare-pricing {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    letter-spacing: 0;
+    line-height: 2em;
+    font-size: 34px;
+    font-family: 'Avenir Next LT Pro Demi';
+    color: #003366;
+}
+.compare-pricing span {
+    font-size: 18px;
+    margin-left: 10px;
 }
 
 #getStarted {
@@ -1006,6 +971,7 @@ th, td {
 }
 .page .plan-pricing {
 	color: #333;
+	border-bottom: 1px solid #eee;
 }
 .page .plan.selected {
 	border-color: #107fc9;
@@ -1119,6 +1085,112 @@ Media Queries
 -------------------------------- */
 
 
+
+@media (min-width: 1200px) {
+	body.page .container {
+    	width: 1060px;
+	}
+    .text-left-lg {
+      text-align: left;
+    }
+    .text-right-lg {
+      text-align: right;
+    }
+    .text-center-lg {
+      text-align: center;
+    }
+    .navbar-page {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.home .plan {
+		margin: 2em 1em;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .text-left-md {
+      text-align: left;
+    }
+    .text-right-md {
+      text-align: right;
+    }
+    .text-center-md {
+      text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .text-left-sm {
+      text-align: left;
+    }
+    .text-right-sm {
+      text-align: right;
+    }
+    .text-center-sm {
+      text-align: center;
+    }
+    .upload {
+		padding: 0;
+		margin: 1em auto;
+    }
+    .upload-metadisk {
+    	margin-top: 1em;
+    }
+    .navbar-page .navbar-brand {
+		margin-right: 0;
+	}
+	.btn-menu {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@media (max-width: 767px) {
+    .text-left-xs {
+      text-align: left;
+    }
+    .text-right-xs {
+      text-align: right;
+    }
+    .text-center-xs {
+      text-align: center;
+    }
+    .navbar-page .logo {
+		margin-left: 0;
+	}
+	.navbar-right {
+		text-align: center;
+		padding-bottom: 1em;
+	}
+	.navbar-page .navbar-nav>li>a {
+		padding: 16px;
+	}
+	.btn-menu {
+		width: 100%;
+		margin: 0.5em 0;
+	}
+	.compare-pricing {
+		font-size: 24px;
+		margin-top: 1.2em;
+	}
+	.compare-logo {
+		max-width: 150px;
+		height: auto;
+	}
+	.compare-metadisk .compare-logo {
+		height: 25px;
+		width: auto;
+		margin-top: 2.5em;
+	}
+	footer {
+		text-align: center;
+	}
+	.footer-logo img {
+		margin: 1em auto 0.1em;
+	}
+}
+
 @media (max-width: 480px) {
 	.section {
 		padding: 2em 0;
@@ -1148,6 +1220,24 @@ Media Queries
 	.c2a {
 		padding: 4em 1.5em;
 	}
+	.compare-pricing {
+		font-size: 18px;
+		margin-top: 1em;
+	}
+	.compare-pricing span {
+		font-size: 16px;
+		margin-left: 0;
+		display: block;
+	}
+	.compare-logo {
+		max-width: 130px;
+		height: auto;
+	}
+	.compare-metadisk .compare-logo {
+		height: 22px;
+		width: auto;
+		margin-top: 2.6em;
+	}
 	footer {
 		text-align: center;
 	}
@@ -1160,98 +1250,5 @@ Media Queries
 	}
 	.footer-logo img {
     	margin: 2em auto 0.3em;
-	}
-}
-
-
-@media (max-width: 767px) {
-    .text-left-xs {
-      text-align: left;
-    }
-    .text-right-xs {
-      text-align: right;
-    }
-    .text-center-xs {
-      text-align: center;
-    }
-    .navbar-page .logo {
-		margin-left: 0;
-	}
-	.navbar-right {
-		text-align: center;
-		padding-bottom: 1em;
-	}
-	.navbar-page .navbar-nav>li>a {
-		padding: 16px;
-	}
-	.btn-menu {
-		width: 100%;
-		margin: 0.5em 0;
-	}
-	footer {
-		text-align: center;
-	}
-	.footer-logo img {
-		margin: 1em auto 0.1em;
-	}
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .text-left-sm {
-      text-align: left;
-    }
-    .text-right-sm {
-      text-align: right;
-    }
-    .text-center-sm {
-      text-align: center;
-    }
-    .upload {
-		padding: 0;
-		margin: 1em auto;
-    }
-    .upload-metadisk {
-    	margin-top: 1em;
-    }
-    .navbar-page .navbar-brand {
-		margin-right: 0;
-	}
-	.btn-menu {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    .text-left-md {
-      text-align: left;
-    }
-    .text-right-md {
-      text-align: right;
-    }
-    .text-center-md {
-      text-align: center;
-    }
-}
-
-@media (min-width: 1200px) {
-	body.page .container {
-    	width: 1060px;
-	}
-    .text-left-lg {
-      text-align: left;
-    }
-    .text-right-lg {
-      text-align: right;
-    }
-    .text-center-lg {
-      text-align: center;
-    }
-    .navbar-page {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-	.home .plan {
-		margin: 2em 1em;
 	}
 }
