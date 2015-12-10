@@ -598,7 +598,6 @@ Value Propositions
 
 .value {
 	padding: 1.5em 0;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
 	z-index: 3;
 	position: relative;
 }
@@ -626,7 +625,6 @@ Traction
 .traction {
 	padding: 3em 0;
 	z-index: 3;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.05);
 	position: relative;
 }
 .traction h2 {
@@ -725,7 +723,7 @@ Pricing
 
 .compare {
 	background: #fff;
-	border-top: 0;
+	border: 0;
 }
 .compare-table {
 	margin: 2em auto;
@@ -737,14 +735,16 @@ Pricing
 }
 .compare-product {
 	height: 7em;
+	padding-left: 1em;
+	padding-right: 1em;
 	border-bottom: 1px solid #eee;
 }
 .compare-metadisk {
-	background: #f9f9f9;
-	border-top: 1px solid #eee;
+    border: 2px solid #2683ff;
+    border-radius: 10px;
 }
 .compare-metadisk .compare-logo {
-	max-width: 160px;
+	max-width: 184px;
 }
 .compare-metadisk .compare-pricing {
 	color: #2683ff;
@@ -752,6 +752,7 @@ Pricing
 .compare-pricing {
     padding-bottom: 0;
     margin-bottom: 0;
+    margin-top: 22px;
     letter-spacing: 0;
     line-height: 2em;
     font-size: 34px;
@@ -1170,6 +1171,9 @@ Media Queries
 	.btn-menu {
 		width: 100%;
 		margin: 0.5em 0;
+	}
+	.compare-product {
+		padding: 0;
 	}
 	.compare-pricing {
 		font-size: 24px;
