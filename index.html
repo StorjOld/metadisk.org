@@ -36,6 +36,8 @@
 
 	<section class="header">
 
+		<div class="header-bg"></div>
+
 		<nav class="navbar navbar-default menu">
 		  <div class="container">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -66,27 +68,28 @@
 		<div id="particles-js"></div>
 
 		<div class="container">
-
-			<div class="row headlines text-center">
-				<h1 class="cd-headline letters type">
-					<span>Get</span> 
-					<span class="cd-words-wrapper waiting">
-						<b class="is-visible">Simple</b>
-						<b>Secure</b>
-						<b>Private</b>
-						<b>Efficient</b>
-						<b>Scalable</b>
-						<b>Reliable</b>
-					</span>
-					<br class="visible-xs">
-					<span>Object Storage</span>
-				</h1>
-				<p>MetaDisk provides developers and IT teams with<br class="hidden-xs"> high performance, durable object storage.</p>
-				<form action="http://storj.us8.list-manage.com/subscribe/post?u=edba9fc4ce8b9095a31859cba&amp;id=7384dee0b2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" spellcheck="false" required>
-					<div style="position: absolute; left: -5000px;"><input type="text" name="b_edba9fc4ce8b9095a31859cba_7384dee0b2" tabindex="-1" value=""></div>
-					<input type="submit" value="Request Invite" name="subscribe" id="mc-embedded-subscribe" class="btn btn-lg btn-orange subscribe">
+			<div class="header-content">
+				<div class="row headlines text-center">
+					<h1 class="cd-headline letters type">
+						<span>Get</span> 
+						<span class="cd-words-wrapper waiting">
+							<b class="is-visible">Simple</b>
+							<b>Secure</b>
+							<b>Private</b>
+							<b>Efficient</b>
+							<b>Scalable</b>
+							<b>Reliable</b>
+						</span>
+						<br class="visible-xs">
+						<span>Object Storage</span>
+					</h1>
+					<p>MetaDisk provides developers and IT teams with<br class="hidden-xs"> high performance, durable object storage.</p>
+					<form action="http://storj.us8.list-manage.com/subscribe/post?u=edba9fc4ce8b9095a31859cba&amp;id=7384dee0b2" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" spellcheck="false" required>
+						<div style="position: absolute; left: -5000px;"><input type="text" name="b_edba9fc4ce8b9095a31859cba_7384dee0b2" tabindex="-1" value=""></div>
+						<input type="submit" value="Request Invite" name="subscribe" id="mc-embedded-subscribe" class="btn btn-lg btn-orange subscribe">
 					</form>
+				</div>				
 			</div>
 		</div>		
 	</section>
@@ -392,6 +395,21 @@
 
 	  ga('create', 'UA-49085346-4', 'auto');
 	  ga('send', 'pageview');
+	</script>
+
+	<script>
+		$(window).scroll(function(){
+		  var x = $(this).scrollTop(),
+		      transY = (x * 0.5), scale = 1 + (x * 0.0003),
+		      transform = 'translateY('+transY+'px) scale('+scale+') translate3d(0,0,0)';
+		  $('.header-bg').css({
+		    opacity: 1 - (x * 0.0008),
+		    WebkitTransform: transform,
+		    MozTransform: transform,
+		    msTransform: transform,
+		    transform: transform
+		  });
+		});
 	</script>
 
 </body>
