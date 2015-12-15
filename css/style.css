@@ -973,6 +973,15 @@ th, td {
     padding: 0;
     margin: 0;
 }
+.bucket-pricing {
+	background: #f9f9f9;
+}
+.bucket-pricing p {
+}
+.bucket-pricing h2 {
+	color: #003366;
+	margin-bottom: 0px;
+}
 .clickable-row {
 	cursor: pointer;
 }
@@ -980,42 +989,6 @@ th, td {
 	margin-bottom: 2em;
 }
 
-.page .plans {
-	margin: 1em -15px 0;
-}
-.page .plan {
-	margin: 0.5em 0;
-	cursor: pointer;
-}
-.page .plan:hover {
-	border-color: #2683ff;
-}
-.page .plan:hover .plan-pricing{
-	color: #2683ff;
-}
-.page .plan:hover h4{
-	color: #2683ff;
-}
-.page .plan-pricing {
-	color: #333;
-	border-bottom: 1px solid #eee;
-}
-.page .plan.selected {
-	border-color: #107fc9;
-	background: #2683ff;
-}
-.page .plan.selected .plan-pricing {
-	color: #fff;
-	border-color: #107fc9;
-}
-.page .plan.selected h4 {
-	color: #fff;
-}
-.page .plan h4 {
-	font-size: 15px;
-	line-height: 0.75em;
-    padding: 0;
-}
 .page .btn-block {
     font-size: 16px;
     margin: 0.5em auto;
@@ -1115,7 +1088,7 @@ Media Queries
 
 @media (min-width: 1200px) {
 	body.page .container {
-    	width: 1060px;
+    	width: 1020px;
 	}
     .text-left-lg {
       text-align: left;
