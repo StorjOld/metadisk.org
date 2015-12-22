@@ -552,8 +552,18 @@ canvas {
 	overflow: hidden;
 }
 .thankyou .header {
-	min-height: 500px;
+	max-height: 520px;
+	min-height: 520px;
 	background: #144EBC;
+}
+.thankyou .btn {
+	position: relative;
+	z-index: 2;
+	font-size: 18px;
+	max-width: 360px;
+	line-height: 1.8em;
+	border-radius: 5px;
+	margin-top: 0.6em;
 }
 .header-bg {
 	position: absolute;
