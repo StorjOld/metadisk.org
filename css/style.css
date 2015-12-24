@@ -1059,6 +1059,13 @@ Sign Up
 .signup p {
 	color: #fff;
 }
+.signup .content {
+	padding: 2em 3em;
+}
+.signup .content p {
+	color: #003366;
+	font-family: 'Avenir Next LT Pro Regular';
+}
 .signup .login {
 	color: #fff;
 	border-bottom: 1px solid;
@@ -1067,10 +1074,19 @@ Sign Up
 	border-bottom: 0;
 	text-decoration: none;
 }
+.signup input {
+	min-width: 100%;
+}
+.password .title {
+	margin-bottom: 0.6em;
+}
+.password .content p {
+	margin-bottom: 2.5em;
+}
 
 /* -------------------------------- 
 
-Sign Up
+API
 
 -------------------------------- */
 
