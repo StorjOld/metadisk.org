@@ -1083,6 +1083,17 @@ Sign Up
 .password .content p {
 	margin-bottom: 2.5em;
 }
+.checkbox {
+	margin-top: 0;
+    margin-bottom: 0;
+}
+.checkbox label {
+    padding-left: 24px;
+}
+.checkbox input {
+    margin: 3px 0 0 -26px !important;
+}
+
 
 /* -------------------------------- 
 
