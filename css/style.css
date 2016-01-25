@@ -601,6 +601,7 @@ canvas {
 	padding: 1em;
 }
 .headlines h1 {
+	font-family: 'Avenir Next LT Pro Demi';
 	font-size:48px;
 	color: #fff;
 }
@@ -869,6 +870,7 @@ C2A
 	padding: 8em 0;
 }
 .c2a h1 {
+	font-family: 'Avenir Next LT Pro Demi';
 	font-size: 48px;
 	margin-bottom: 0.5em;
 	color: #fff;
