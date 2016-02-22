@@ -54,12 +54,20 @@
 	      <ul class="nav navbar-nav navbar-left">
 	      	<li><a href="buckets.html">Buckets</a></li>
 			<li><a href="api.html">API</a></li>
-			<li><a href="">Billing</a></li>
+			<li><a href="billing.html">Billing</a></li>
 			<li><a href="">Support</a></li>
 	      </ul>
 	      <div class="navbar-right">
 	      	<a href="create-bucket.html" class="btn btn-green btn-menu">Create Bucket</a>	
-	      	<a href="index.html" class="btn btn-menu btn-transparent">Logout</a>
+	      	<li class="dropdown">
+	          <a href="#" class="dropdown-toggle btn btn-menu btn-transparent" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Tome <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="profile.html">Profile</a></li>
+	            <li><a href="billing.html">Billing</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="index.html">Logout</a></li>
+	          </ul>
+	        </li>
 	      </div>
 	    </div>
 	  </div>
@@ -102,7 +110,7 @@
 							<a href="buckets.html" class="btn btn-block btn-transparent">Go Back</a>
 						</div>
 						<div class="col-xs-6">
-							<a href="buckets.html" class="btn btn-block btn-green btn-create-bucket">Save Bucket</a>
+							<a href="buckets.html" class="btn btn-block btn-create-bucket">Save Bucket</a>
 						</div>
 					</div>
 
@@ -137,13 +145,6 @@
 	<script src="js/bootstrap.min.js"></script>
 
 	<script>
-		$('.plan').click(function(e) {
-	        e.preventDefault(); // prevent the default action
-	        e.stopPropagation(); // stop the click from bubbling
-	        $('.selected').removeClass('selected');
-	        $(this).addClass('selected');
-	    });
-
 	    $('#newKey').click(function() {
 		    var newKey = document.createElement('input');
 		    $(newKey).attr("placeholder", "Enter your public key");

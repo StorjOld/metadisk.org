@@ -43,7 +43,7 @@
   <body class="page">
 
     <nav class="navbar navbar-page">
-      <div class="container-fluid">
+      <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu" aria-expanded="false">
@@ -62,35 +62,30 @@
           <ul class="nav navbar-nav navbar-left">
             <li><a href="buckets.html">Buckets</a></li>
             <li><a href="api.html">API</a></li>
-            <li><a href="">Billing</a></li>
+            <li><a href="billing.html">Billing</a></li>
             <li><a href="">Support</a></li>
           </ul>
           <div class="navbar-right">
             <a href="create-bucket.html" class="btn btn-green btn-menu">Create Bucket</a> 
-            <a href="index.html" class="btn btn-menu btn-transparent">Logout</a>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle btn btn-menu btn-transparent" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Tome <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="billing.html">Billing</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="index.html">Logout</a></li>
+              </ul>
+            </li>
           </div>
         </div>
       </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar" style="margin-top: 88px;">
-            <li><a><h5 style="color: #003366; text-transform: uppercase;">Your Buckets</h5></a></li>
-            <li class="active"><a href="#" style="background:#fff; color: #2683ff; font-weight: bold; border-left: 4px solid #2683ff;">Personal</a></li>
-            <li><a href="#">Website</a></li>
-            <li><a href="#">Music</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a><h5 style="color: #003366; text-transform: uppercase;">Bucket Usage</h5></a></li>
-            <li><a href=""><small>Space: <span style="color: #003366;">12.3GB</span></small></a></li>
-            <li><a href=""><small>Bandwidth: <span style="color: #003366;">43.2GB</span></small></a></li>
-          </ul>
 
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1>Your Files <a href="" class="btn btn-action btn-default btn-transparent  pull-right" style="margin-left: 16px; margin-top: 0;">Share</a> <a href="" class="btn btn-action btn-default pull-right" style="margin-left: 16px; margin-top: 0;">New Folder</a> <a href="" class="btn btn-action btn-green btn-md pull-right" style="font-weight: bold; margin-top: 0;">Upload</a> </h1>
+        <div class="col-sm-12 main">
+          <h1>Your Files <a href="" class="btn btn-action btn-default btn-transparent  pull-right" style="margin-left: 16px; margin-top: 0;">Share</a> <a href="" class="btn btn-action btn-transparent pull-right" style="margin-left: 16px; margin-top: 0;">New Folder</a> <a href="" class="btn btn-action btn-orange btn-md pull-right" style="font-weight: bold; margin-top: 0;">Upload Files</a> </h1>
 
           <div class="table-responsive"; style="margin-top: 2.5em; overflow: hidden;">
             <table class="table table-hover content" id="files" width="100%">
@@ -139,11 +134,8 @@
                   <td>1773 KB</td>
                   <td>2 months ago</td>
                 </tr>
-
               </tbody>
             </table>
-
-
 
           </div>
         </div>

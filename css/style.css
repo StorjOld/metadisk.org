@@ -71,21 +71,20 @@ h1, h2, h3, h4, h5, h6, a, p, span {
 	font-kerning: normal;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Avenir Next LT Pro Bold';
-	color: #2683FF;
+	font-family: 'Avenir Next LT Pro Regular';
+	color: #555;
 	letter-spacing: -1px;
 	margin-bottom: 0.6em;
 }
-h1 {
-	font-size: 40px;
-	margin-bottom: 26px;
+.home h1, .home h2, .home h3, .home h4, .home h5, .home h6 {
+	font-family: 'Avenir Next LT Pro Demi';
+	color: #2683FF;
 }
-h1.title {
+.title {
 	margin-bottom: 1em;
 }
 p {
 	font-family: 'Avenir Next LT Pro Regular';
-	color: #003366;
 }
 b {
 	font-family:'Avenir Next LT Pro Demi';
@@ -98,6 +97,28 @@ img {
 	user-select: none;
 }
 
+.blue {
+	color: #2683ff;
+}
+
+.spacer5 { height: 5px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer10 { height: 10px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer15 { height: 15px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer20 { height: 20px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer25 { height: 25px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer30 { height: 30px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer35 { height: 35px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer40 { height: 40px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer45 { height: 45px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer50 { height: 50px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer100 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+
+.mb0 { margin-bottom: 0 !important; }
+.mt0 { margin-top: 0 !important; }
+.ml0 { margin-left: 0 !important; }
+.mr0 { margin-right: 0 !important; }
+
 
 /* -------------------------------- 
 
@@ -106,7 +127,7 @@ Buttons
 -------------------------------- */
 
 .btn {
-	font-family: 'Avenir Next LT Pro Bold';
+	font-family: 'Avenir Next LT Pro Demi';
 	font-size: 14px;
 	background: #2683FF;
 	color: #FFF;
@@ -134,13 +155,13 @@ Buttons
 
 .btn-transparent {
 	background: transparent;
-	border-color: #2683ff;
-	color: #2683ff;
+    border-color: #eee;
+    color: #555;
 }
 .btn-transparent:hover {
-	background: #2683ff;
-	color: #fff;
-	border-color: #2683ff;
+	background: #fff;
+	color: #333;
+	border-color: #555;
 }
 
 .btn-green {
@@ -185,8 +206,8 @@ Buttons
 }
 
 .btn-block {
-	margin-top: 1.6em !important;
-	margin-bottom: 1.4em !important;
+	margin-top: 1.6em;
+	margin-bottom: 1.4em;
 }
 
 .subscribe {
@@ -252,11 +273,10 @@ Navigation
     padding-bottom: 15px;
     line-height: 22px;
     text-align: center;
-    font-family:'Avenir Next LT Pro Demi';
 }
 .nav>li>a:hover, .nav>li>a:focus {
-    text-decoration: underline;
     background: none; 
+    box-shadow: 0 2px #2683ff;
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -268,6 +288,10 @@ Navigation
 	color: #fff;
 }
 
+.navbar .dropdown {
+	display: inline-block;
+}
+
 .navbar-page {
 	border: 0;
 	border-bottom: 2px solid #eee;
@@ -277,12 +301,14 @@ Navigation
 .navbar-page .navbar-nav>li>a {
 	padding: 30px 16px;
 	width: 100%;
-	color: #2683ff;
+    color: #8492a6;
 }
 .navbar-page .navbar-nav>li>a:hover {
-	color: #173AE8;
+	color: #2683ff;
 }
 .navbar-page .navbar-nav>li>a.active {
+	font-family: 'Avenir Next LT Pro Demi';
+	color: #2683ff;
 	box-shadow: 0 2px #2683ff;
 }
 .navbar-page .navbar-brand {
@@ -307,7 +333,7 @@ Inputs
 
 -------------------------------- */
 
-input {
+input, select {
 	display: block;
 	background: #fbfbfb;
 	border: 1px solid #eee;
@@ -323,18 +349,23 @@ input {
     -ms-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
 }
-input:focus{
+input:focus, select:focus {
     outline: 0;
     border-color: #2D86fb;
 }
-.page input {
+.page input, .page select {
 	margin: 10px 0;
-    border-radius: 3px;
     border-width: 1px;
     max-width: 100%;
 }
 #publicKeys input {
 	margin-top: 20px;
+}
+
+select {
+	height: 46px;
+	text-indent: 10px;
+	color: #444;
 }
 
 .email {
@@ -972,11 +1003,16 @@ tr {
 th, td {
 	padding: 1.8em !important;
 }
+
 .table>thead>tr>th {
     border-bottom: 1px solid #eee;
 }
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    border-top: 1px solid #eee;
+}
 .bucket-plan a {
 	font-family: 'Avenir Next LT Pro Demi';
+	text-decoration: none;
 }
 .bucket-icon {
 	padding: 22px 0 0 26px !important;
@@ -988,20 +1024,16 @@ th, td {
     padding: 0;
     margin: 0;
 }
-.bucket-pricing {
-	background: #f9f9f9;
-}
-.bucket-pricing p {
-}
-.bucket-pricing h2 {
-	color: #003366;
-	margin-bottom: 0px;
-}
 .clickable-row {
 	cursor: pointer;
 }
 .btn-create-bucket {
 	margin-bottom: 2em;
+}
+.bucket-pricing-icon {
+	height: 50px;
+	width: 50px;
+	margin: 15px;
 }
 
 .page .btn-block {
@@ -1049,17 +1081,7 @@ Sign Up
 
 -------------------------------- */
 
-.signup {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#144ebc+0,185ee0+100 */
-	background: #144ebc; /* Old browsers */
-	background: -moz-linear-gradient(45deg,  #144ebc 0%, #185ee0 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#144ebc), color-stop(100%,#185ee0)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* IE10+ */
-	background: linear-gradient(45deg,  #144ebc 0%,#185ee0 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#144ebc', endColorstr='#185ee0',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-}
+
 .signup .logo {
 	margin: 3em auto;
 	width: 200px;
@@ -1068,36 +1090,21 @@ Sign Up
 	margin-bottom: 1.5em;
 	font-size: 16px;
 }
-.signup p {
-	color: #fff;
-}
 .signup .content {
 	padding: 2em 3em;
 }
-.signup .content p {
-	color: #003366;
-	font-family: 'Avenir Next LT Pro Regular';
-}
-.signup .login {
-	color: #fff;
-	border-bottom: 1px solid;
-}
-.signup .login:hover {
-	border-bottom: 0;
-	text-decoration: none;
-}
 .signup input {
 	min-width: 100%;
+}
+.signup .forgot-password {
+	display: block;
+	margin-top: 8px;
 }
 .password .title {
 	margin-bottom: 0.6em;
 }
 .password .content p {
 	margin-bottom: 2.5em;
-}
-.checkbox {
-	margin-top: 0;
-    margin-bottom: 0;
 }
 .checkbox label {
     padding-left: 24px;
